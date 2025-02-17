@@ -1,0 +1,75 @@
+.u\:step--2 {
+    font-size: var(--step--2);
+}
+
+.u\:step--1 {
+    font-size: var(--step--1);
+}
+
+.u\:step-0 {
+    font-size: var(--step-0);
+}
+
+.u\:step-1 {
+    font-size: var(--step-1);
+}
+
+.u\:step-2 {
+    font-size: var(--step-2);
+}
+
+.u\:step-3 {
+    font-size: var(--step-3);
+}
+
+.u\:step-4 {
+    font-size: var(--step-4);
+}
+
+.u\:step-5 {
+    font-size: var(--step-5);
+}
+
+.u\:fw-100 {
+    font-weight: 100;
+}
+.u\:fw-200 {
+    font-weight: 200;
+}
+.u\:fw-300 {
+    font-weight: 300;
+}
+.u\:fw-400 {
+    font-weight: 400;
+}
+.u\:fw-500 {
+    font-weight: 500;
+}
+.u\:fw-600 {
+    font-weight: 600;
+}
+.u\:fw-700 {
+    font-weight: 700;
+}
+.u\:fw-800 {
+    font-weight: 800;
+}
+.u\:fw-900 {
+    font-weight: 900;
+}
+
+.u\:lh-tight {
+    line-height: var(--lh-tight);
+}
+
+.u\:lh-normal {
+    line-height: var(--lh-normal);
+}
+
+.u\:lh-airy {
+    line-height: var(--lh-airy);
+}
+
+.u\:lh-ui {
+    line-height: var(--lh-ui);
+}

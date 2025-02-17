@@ -1,0 +1,48 @@
+/* @link https://utopia.fyi/space/calculator?c=300,14,1.125,1296,16,1.125,5,2,&s=0.75|0.5|0.25|0.125,1.25|1.5|1.75|2|2.5,s-l&g=xs,s,2xl,16 */
+
+:root {
+    /* Space 4xs: 2px → 2px */
+    --space-4xs: clamp(0.125rem, 0.125rem + 0vw, 0.125rem);
+    /* Space 3xs: 4px → 4px */
+    --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
+    /* Space 2xs: 7px → 8px */
+    --space-2xs: clamp(0.4375rem, 0.4187rem + 0.1004vw, 0.5rem);
+    /* Space xs: 11px → 12px */
+    --space-xs: clamp(0.6875rem, 0.6687rem + 0.1004vw, 0.75rem);
+    /* Space s: 14px → 16px */
+    --space-s: clamp(0.875rem, 0.8373rem + 0.2008vw, 1rem);
+    /* Space m: 18px → 20px */
+    --space-m: clamp(1.125rem, 1.0873rem + 0.2008vw, 1.25rem);
+    /* Space l: 21px → 24px */
+    --space-l: clamp(1.3125rem, 1.256rem + 0.3012vw, 1.5rem);
+    /* Space xl: 25px → 28px */
+    --space-xl: clamp(1.5625rem, 1.506rem + 0.3012vw, 1.75rem);
+    /* Space 2xl: 28px → 32px */
+    --space-2xl: clamp(1.75rem, 1.6747rem + 0.4016vw, 2rem);
+    /* Space 3xl: 35px → 40px */
+    --space-3xl: clamp(2.1875rem, 2.0934rem + 0.502vw, 2.5rem);
+
+    /* One-up pairs */
+    /* Space 4xs-3xs: 2px → 4px */
+    --space-4xs-3xs: clamp(0.125rem, 0.0873rem + 0.2008vw, 0.25rem);
+    /* Space 3xs-2xs: 4px → 8px */
+    --space-3xs-2xs: clamp(0.25rem, 0.1747rem + 0.4016vw, 0.5rem);
+    /* Space 2xs-xs: 7px → 12px */
+    --space-2xs-xs: clamp(0.4375rem, 0.3434rem + 0.502vw, 0.75rem);
+    /* Space xs-s: 11px → 16px */
+    --space-xs-s: clamp(0.6875rem, 0.5934rem + 0.502vw, 1rem);
+    /* Space s-m: 14px → 20px */
+    --space-s-m: clamp(0.875rem, 0.762rem + 0.6024vw, 1.25rem);
+    /* Space m-l: 18px → 24px */
+    --space-m-l: clamp(1.125rem, 1.012rem + 0.6024vw, 1.5rem);
+    /* Space l-xl: 21px → 28px */
+    --space-l-xl: clamp(1.3125rem, 1.1807rem + 0.7028vw, 1.75rem);
+    /* Space xl-2xl: 25px → 32px */
+    --space-xl-2xl: clamp(1.5625rem, 1.4307rem + 0.7028vw, 2rem);
+    /* Space 2xl-3xl: 28px → 40px */
+    --space-2xl-3xl: clamp(1.75rem, 1.5241rem + 1.2048vw, 2.5rem);
+
+    /* Custom pairs */
+    /* Space s-l: 14px → 24px */
+    --space-s-l: clamp(0.875rem, 0.6867rem + 1.004vw, 1.5rem);
+}

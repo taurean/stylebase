@@ -1,0 +1,109 @@
+/*
+Credit to:
+Josh Comeau
+https://www.joshwcomeau.com/css/custom-css-reset/
+Andy Bell
+https://github.com/hankchizljaw/modern-css-reset
+Elad Shechter
+https://github.com/elad2412/the-new-css-reset
+*/
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+html:focus-within {
+    scroll-behavior: smooth;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+    display: inline-block;
+    /* https://twitter.com/csswizardry/status/1717841334462005661 */
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+}
+ul[class],
+ol[class] {
+    list-style: none;
+    padding-left: 0;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+a,
+button {
+    cursor: revert;
+}
+a:hover,
+a:focus {
+    /* Placeholder for now… */
+    text-decoration: underline;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+#root,
+#app,
+#__next {
+    isolation: isolate;
+}
+#app {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+body {
+    font-size: var(--step-0);
+}
