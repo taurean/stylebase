@@ -1,0 +1,3 @@
+@layer webfont, token, utility, composition;
+
+@import "module/font-size.css" layer(token);
