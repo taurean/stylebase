@@ -1,0 +1,3 @@
+.c\:waterfall > * + * {
+    margin-block-start: var(--waterfall-gap, 2em);
+}
