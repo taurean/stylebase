@@ -1,26 +1,26 @@
-/* @link https://utopia.fyi/type/calculator?c=320,10,1.2,1240,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=314,10,1.2,1764,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,xl,3xl,16 */
 
 :root {
     /* Step 0: 10px → 12px */
-    --step-0: clamp(0.625rem, 0.5815rem + 0.2174vw, 0.75rem);
+    --fs-0: clamp(0.625rem, 0.5979rem + 0.1379vw, 0.75rem);
     /* Step 1: 12px → 15px */
-    --step-1: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+    --fs-1: clamp(0.75rem, 0.7094rem + 0.2069vw, 0.9375rem);
     /* Step 2: 14.4px → 18.75px */
-    --step-2: clamp(0.9rem, 0.8054rem + 0.4728vw, 1.1719rem);
+    --fs-2: clamp(0.9rem, 0.8411rem + 0.3vw, 1.1719rem);
     /* Step 3: 17.28px → 23.4375px */
-    --step-3: clamp(1.08rem, 0.9461rem + 0.6693vw, 1.4648rem);
+    --fs-3: clamp(1.08rem, 0.9967rem + 0.4247vw, 1.4648rem);
     /* Step 4: 20.736px → 29.2969px */
-    --step-4: clamp(1.296rem, 1.1099rem + 0.9305vw, 1.8311rem);
+    --fs-4: clamp(1.296rem, 1.1801rem + 0.5904vw, 1.8311rem);
     /* Step 5: 24.8832px → 36.6211px */
-    --step-5: clamp(1.5552rem, 1.3rem + 1.2759vw, 2.2888rem);
+    --fs-5: clamp(1.5552rem, 1.3963rem + 0.8095vw, 2.2888rem);
     /* Step 6: 29.8598px → 45.7764px */
-    --step-6: clamp(1.8662rem, 1.5202rem + 1.7301vw, 2.861rem);
+    --fs-6: clamp(1.8662rem, 1.6508rem + 1.0977vw, 2.861rem);
     /* Step 7: 35.8318px → 57.2205px */
-    --step-7: clamp(2.2395rem, 1.7745rem + 2.3249vw, 3.5763rem);
+    --fs-7: clamp(2.2395rem, 1.95rem + 1.4751vw, 3.5763rem);
     /* Step 8: 42.9982px → 71.5256px */
-    --step-8: clamp(2.6874rem, 2.0672rem + 3.1008vw, 4.4703rem);
+    --fs-8: clamp(2.6874rem, 2.3013rem + 1.9674vw, 4.4703rem);
     /* Step 9: 51.5978px → 89.407px */
-    --step-9: clamp(3.2249rem, 2.4029rem + 4.1097vw, 5.5879rem);
+    --fs-9: clamp(3.2249rem, 2.7131rem + 2.6075vw, 5.5879rem);
     /* Step 10: 61.9174px → 111.7587px */
-    --step-10: clamp(3.8698rem, 2.7863rem + 5.4175vw, 6.9849rem);
+    --fs-10: clamp(3.8698rem, 3.1953rem + 3.4373vw, 6.9849rem);
 }
