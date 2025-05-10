@@ -1,4 +1,4 @@
-@layer webfont, token, defaults, utility, composition;
+@layer webfont, token, defaults, utility, layout;
 
 @import "module/font-size.css" layer(token);
-@import "module/waterfall.css" layer(composition);
+@import "module/waterfall.css" layer(layout);
