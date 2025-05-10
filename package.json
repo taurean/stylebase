@@ -4,9 +4,11 @@
     "description": "a starter set of CSS files",
     "scripts": {
         "build": "postcss stylebase/imports.css -o dist/stylebase.min.css",
-        "build:preview": "postcss stylebase/imports.css -o dist-preview/stylebase.css --no-map --env preview"
+        "build:preview": "postcss stylebase/imports.css -o dist-preview/stylebase.css --no-map --env preview",
+        "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html' --startPath 'examples/'"
     },
     "devDependencies": {
+        "browser-sync": "^3.0.4",
         "cssnano": "^6.0.5",
         "postcss": "^8.4.35",
         "postcss-cli": "^11.0.0",
