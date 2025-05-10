@@ -1,4 +1,7 @@
 @layer webfont, token, defaults, utility, layout;
 
-@import "module/font-size.css" layer(token);
+@import "module/color.css" layer(token);
+@import "module/font-family.css" layer(token);
+@import "mdoule/font-size.css" layer(token);
+@import "module/space.css" layer(token);
 @import "module/waterfall.css" layer(layout);
