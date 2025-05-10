@@ -1,0 +1,16 @@
+/* @link https://utopia.fyi/clamp/calculator?a=314,1764,0.56—0.67|0.9—1.08|1.46—1.75|2.36—2.83|3.82—4.59|6.18—7.42|10—12|16.18—19.42|26.18—31.42|42.36—50.83|68.54—82.25|110.9—133.08|179.44—215.33&p=space */
+:root {
+    --space-5xs: clamp(0.56px, 0.5362px + 0.0076vw, 0.67px);
+    --space-4xs: clamp(0.9px, 0.861px + 0.0124vw, 1.08px);
+    --space-3xs: clamp(1.46px, 1.3972px + 0.02vw, 1.75px);
+    --space-2xs: clamp(2.36px, 2.2582px + 0.0324vw, 2.83px);
+    --space-xs: clamp(3.82px, 3.6533px + 0.0531vw, 4.59px);
+    --space-sm: clamp(6.18px, 5.9115px + 0.0855vw, 7.42px);
+    --space-medium: clamp(10px, 9.5669px + 0.1379vw, 12px);
+    --space-lg: clamp(16.18px, 15.4784px + 0.2234vw, 19.42px);
+    --space-xl: clamp(26.18px, 25.0453px + 0.3614vw, 31.42px);
+    --space-2xl: clamp(42.36px, 40.5258px + 0.5841vw, 50.83px);
+    --space-3xl: clamp(68.54px, 65.5711px + 0.9455vw, 82.25px);
+    --space-4xl: clamp(110.9px, 106.0969px + 1.5297vw, 133.08px);
+    --space-5xl: clamp(179.44px, 171.668px + 2.4752vw, 215.33px);
+}
