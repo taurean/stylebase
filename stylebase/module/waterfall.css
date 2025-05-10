@@ -1,3 +1,7 @@
+.l\:waterfall > * {
+    margin-block: 0;
+}
+
 .l\:waterfall > * + * {
     margin-block-start: var(--waterfall-gap, 2em);
 }
