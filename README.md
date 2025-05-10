@@ -1,5 +1,6 @@
 # stylebase
-![GitHub Release](https://img.shields.io/github/v/release/taurean/stylebase) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/taurean/stylebase) ![GitHub Repo stars](https://img.shields.io/github/stars/taurean/stylebase?style=flat)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/taurean/stylebase?style=flat-square)
+ ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/taurean/stylebase?style=flat-square) ![GitHub Repo stars](https://img.shields.io/github/stars/taurean/stylebase?style=flat-square)
 
 
 A starter set of CSS files for building modular web components and layouts.
