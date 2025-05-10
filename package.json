@@ -1,6 +1,6 @@
 {
     "name": "stylebase",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "description": "a starter set of CSS files",
     "scripts": {
         "build": "postcss stylebase/imports.css -o dist/stylebase.min.css",
