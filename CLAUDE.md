@@ -7,12 +7,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build:preview`: Builds non-minified CSS to `dist-preview/stylebase.css`
 
 ## Code Style Guidelines
-- CSS is organized using cascade layers: `@layer webfont, token, defaults, utility, composition`
+- CSS is organized using cascade layers: `@layer webfont, token, defaults, utility, layout`
   - `webfont`: Only for webfont imports
   - `token`: Only for defining design tokens/variables, no classes
   - `defaults`: Only for styling HTML elements, not classes
   - `utility`: Utility classes with namespaced format using escaped colons
-  - `composition`: Layout classes with namespaced format using escaped colons
+  - `layout`: Layout classes with namespaced format using escaped colons
 - CSS variables use kebab-case with `--` prefix (e.g., `--step-0`, `--waterfall-gap`)
 - Class naming follows namespaced format with escaped colons (e.g., `l\:waterfall`) only for layouts and utilities
 - Use 4-space indentation in all CSS files
