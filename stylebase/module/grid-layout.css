@@ -1,18 +1,19 @@
-.l\:grid-parent {
-    max-width: var(--grid-max-width);
-    padding-inline: var(--grid-gutter);
-    margin-inline: auto;
-}
-
 .l\:grid {
+    column-gap: var(--grid-gutter);
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
-    column-gap: var(--grid-gutter);
+    margin-inline: auto;
+    max-width: var(--grid-max-width);
+    padding-inline: var(--grid-gutter);
     row-gap: 0;
 }
 
 [data-grid-columns="quarter"] {
     grid-column: span calc(var(--grid-columns) / 4);
+}
+
+[data-grid-columns="third"] {
+    grid-column: span calc(var(--grid-columns) / 3);
 }
 
 [data-grid-columns="half"] {
