@@ -1,6 +1,6 @@
 /* @link https://utopia.fyi/grid/calculator?c=314,10,1.2,1764,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,xl,3xl,16 */
 :root {
-    --grid-max-width: 110.25rem;
+    --grid-max-width: 110.25rem; /* 1764px, 16 columns + 2 gutter on edges */
     --grid-gutter: var(
         --space-s-xl,
         clamp(0.625rem, 0.2731rem + 1.7931vw, 2.25rem)
