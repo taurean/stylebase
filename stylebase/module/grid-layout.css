@@ -10,3 +10,15 @@
     column-gap: var(--grid-gutter);
     row-gap: 0;
 }
+
+[data-grid-columns="quarter"] {
+    grid-column: span calc(var(--grid-columns) / 4);
+}
+
+[data-grid-columns="half"] {
+    grid-column: span calc(var(--grid-columns) / 2);
+}
+
+[data-grid-columns="full"] {
+    grid-column: span var(--grid-columns);
+}
