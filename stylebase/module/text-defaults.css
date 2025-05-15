@@ -1,0 +1,70 @@
+body {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--ff-heading);
+        text-wrap: balance;
+    }
+
+    p {
+        text-wrap: pretty;
+        width: 100%;
+        max-width: 68ch;
+    }
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h4,
+h5,
+h6 {
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: var(--fs-5);
+}
+
+h2 {
+    font-size: var(--fs-4);
+}
+
+h3 {
+    font-size: var(--fs-3);
+}
+
+h4 {
+    font-size: var(--fs-2);
+}
+
+h5 {
+    font-size: var(--fs-1);
+}
+
+h6 {
+    font-size: var(--fs-0);
+}
+
+p {
+    line-height: 1.5;
+}
