@@ -6,6 +6,7 @@
 @import "module/generics.css" layer(defaults);
 @import "module/grid.css" layer(token);
 @import "module/grid-layout.css" layer(layout);
+@import "module/root-container.css" layer(layout);
 @import "module/space.css" layer(token);
 @import "module/text-defaults.css" layer(defaults);
 @import "module/waterfall.css" layer(layout);

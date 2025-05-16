@@ -1,0 +1,6 @@
+.l\:root {
+    display: block;
+    margin-inline: auto;
+    max-width: var(--grid-max-width);
+    padding-inline: var(--grid-gutter);
+}
