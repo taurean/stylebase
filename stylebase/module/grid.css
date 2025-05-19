@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/grid/calculator?c=314,10,1.2,1764,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,xl,3xl,16 */
+/* @link https://utopia.fyi/grid/calculator?c=310,10,1.2,1332,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,xl,3xl,12 */
 :root {
     --grid-max-width: 83.25rem; /* 12 columns + 2 gutter on edges */
     --grid-gutter: var(
