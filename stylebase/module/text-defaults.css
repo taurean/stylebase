@@ -9,24 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-}
-
-article {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: var(--ff-heading);
-        text-wrap: balance;
-    }
-
-    p {
-        text-wrap: pretty;
-        width: 100%;
-        max-width: 68ch;
-    }
+    font-weight: unset;
 }
 
 h1,
@@ -65,6 +48,28 @@ h6 {
     font-size: var(--fs-0);
 }
 
+:where(h5, h6):not([class]) {
+    text-transform: uppercase;
+}
+
 p {
     line-height: 1.5;
+    font-size: var(--fs-1);
+}
+
+article :where(h1, h2, h3, h4, h5, h6) {
+    fontfamily: var(--ff-heading);
+    text-wrap: balance;
+}
+
+article p {
+    max-width: 68ch;
+    text-wrap: pretty;
+    width: 100%;
+}
+
+a {
+}
+
+a:not([class]) {
 }
