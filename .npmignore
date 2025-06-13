@@ -1,0 +1,8 @@
+node_modules/
+examples/
+dist-preview/
+.git/
+.github/
+.claude/npm
+*.log
+.env*

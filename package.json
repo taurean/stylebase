@@ -1,11 +1,38 @@
 {
-    "name": "stylebase",
+    "name": "@taurean/stylebase",
     "version": "0.7.0",
     "description": "a starter set of CSS files",
+    "main": "dist/stylebase.min.css",
+    "files": [
+        "dist/",
+        "README.md",
+        "LICENSE"
+    ],
+    "keywords": [
+        "CSS",
+        "utility-classes",
+        "design-tokens",
+        "postcss",
+        "utility",
+        "reset"
+    ],
+    "author": "Taurean Bryant <later@taurean.work>",
+    "license": "SEE LICENSE IN LICENSE",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/taurean/stylebase.git"
+    },
+    "homepage": "https://github.com/taurean/stylebase",
+    "bugs": {
+        "url": "https://github.com/taurean/stylebase/issues"
+    },
     "scripts": {
         "build": "postcss stylebase/imports.css -o dist/stylebase.min.css",
         "build:preview": "postcss stylebase/imports.css -o dist-preview/stylebase.css --no-map --env preview",
-        "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html' --startPath 'examples/'"
+        "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html' --startPath 'examples/'",
+        "release:patch": "npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public",
+        "release:minor": "npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public",
+        "release:major": "npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public"
     },
     "devDependencies": {
         "browser-sync": "^3.0.4",
