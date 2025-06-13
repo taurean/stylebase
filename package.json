@@ -1,6 +1,6 @@
 {
     "name": "@taurean/stylebase",
-    "version": "0.7.0",
+    "version": "0.7.1",
     "description": "a starter set of CSS files",
     "main": "dist/stylebase.min.css",
     "files": [
