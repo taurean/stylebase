@@ -26,7 +26,11 @@ Import globally **once** in your project as one of the earliest CSS files. This 
 
 ## What's Included
 
-- **Design tokens** - CSS custom properties for consistent theming
-- **Utility classes** - Functional CSS classes for rapid development  
-- **Layout utilities** - Responsive layout patterns
-- **Defaults** - Sensible base styles for HTML elements
+- **Color system** - Complete OKLCH color palette with 11 shades per hue
+- **Fluid typography** - Responsive font sizes using clamp() 
+- **Fluid spacing** - Responsive spacing scale using clamp()
+- **CSS Grid layout** - 12-column grid with responsive gutters
+- **Layout utilities** - Waterfall spacing, root container, grid helpers
+- **Sensible defaults** - Base styles for HTML elements
+
+Built from best practices and resources including Evil Martians' Harmony color palette, Every Layout patterns, Cube CSS methodology, and Utopia fluid scales.
