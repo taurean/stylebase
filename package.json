@@ -3,6 +3,15 @@
     "version": "0.7.2",
     "description": "a starter set of CSS files",
     "main": "dist/stylebase.min.css",
+    "style": "dist/stylebase.min.css",
+    "exports": {
+        ".": {
+            "style": "./dist/stylebase.min.css",
+            "default": "./dist/stylebase.min.css"
+        },
+        "./css": "./dist/stylebase.min.css",
+        "./dist/*": "./dist/*"
+    },
     "files": [
         "dist/",
         "README.md",
