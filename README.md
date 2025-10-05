@@ -41,5 +41,5 @@ once changes are merged into `main`, run one of the release scripts (`npm run re
 
 - use `npm run build` to update the minified CSS in `dist/`, useful for testing output before publishing
 - use `npm run build:preview` to update a non-minified css file in `dist/`
-- use `npm run dev` for live reload via browsersync, to test the example HTML files while making style changes
+- use `npm run dev` for live reload via browsersync, to test the example HTML files while making style changes. (files in `examples/` do not themselves have CSS files. The html files assume to be impacted by global CSS properties and utility classes built into stylebase)
 - using release scripts assumes that the remote url for the main releases is labeled `gh`
