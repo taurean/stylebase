@@ -34,3 +34,12 @@ Import globally **once** in your project as one of the earliest CSS files. This 
 - **Sensible defaults** - Base styles for HTML elements
 
 Built from best practices and resources including [Evil Martians' Harmony color palette](https://evilmartians.com/opensource/harmony), [Cube CSS methodology](https://cube.fyi), and [Utopia fluid scales](https://utopia.fyi).
+
+
+## contributing to stylebase + publishing changes
+once changes are merged into `main`, run one of the release scripts (`npm run release:patch`, `npm run release:minor`, or `npm run release:major`) to minify CSS, update package.json version, and publish changes to [NPM](https://www.npmjs.com/package/@taurean/stylebase)
+
+- use `npm run build` to update the minified CSS in `dist/`, useful for testing output before publishing
+- use `npm run build:preview` to update a non-minified css file in `dist/`
+- use `npm run dev` for live reload via browsersync, to test the example HTML files while making style changes
+- using release scripts assumes that the remote url for the main releases is labeled `gh`
