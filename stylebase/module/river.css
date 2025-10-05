@@ -1,0 +1,7 @@
+.l\:river > * {
+    margin-inline: 0;
+}
+
+.l\:river > * + * {
+    margin-inline-start: var(--river-gap, 1em);
+}
