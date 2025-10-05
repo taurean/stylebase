@@ -1,0 +1,8 @@
+.l\:ui-list {
+    list-style-type: none;
+    padding-inline: unset;
+
+    li {
+        display: inline-block;
+    }
+}
