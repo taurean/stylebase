@@ -1,5 +1,6 @@
 @layer webfont, token, defaults, utility, layout;
 
+@import "module/article.css" layer(defaults);
 @import "module/color.css" layer(token);
 @import "module/font-family.css" layer(token);
 @import "module/font-size.css" layer(token);
@@ -13,3 +14,5 @@
 @import "module/text-defaults.css" layer(defaults);
 @import "module/ui-list.css" layer(layout);
 @import "module/waterfall.css" layer(layout);
+
+@import "module/text-util.css" layer(utility);

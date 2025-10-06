@@ -24,3 +24,12 @@
     /* Step 10: 61.9174px → 111.7587px */
     --fs-10: clamp(3.8698rem, 3.1953rem + 3.4373vw, 6.9849rem);
 }
+
+:root {
+    --lh-ui: 1;
+    --lh-snug: 1.15;
+    --lh-condensed: 1.35;
+    --lh-standard: 1.5;
+    --lh-expanded: 1.62;
+    --lh-loose: 1.75;
+}

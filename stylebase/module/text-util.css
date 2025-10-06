@@ -1,0 +1,67 @@
+.u\:fs-0 {
+    font-size: var(--fs-0);
+}
+
+.u\:fs-1 {
+    font-size: var(--fs-1);
+}
+
+.u\:fs-2 {
+    font-size: var(--fs-2);
+}
+
+.u\:fs-3 {
+    font-size: var(--fs-3);
+}
+
+.u\:fs-4 {
+    font-size: var(--fs-4);
+}
+
+.u\:fs-5 {
+    font-size: var(--fs-5);
+}
+
+.u\:fs-6 {
+    font-size: var(--fs-6);
+}
+
+.u\:fs-7 {
+    font-size: var(--fs-7);
+}
+
+.u\:fs-8 {
+    font-size: var(--fs-8);
+}
+
+.u\:fs-9 {
+    font-size: var(--fs-9);
+}
+
+.u\:fs-10 {
+    font-size: var(--fs-10);
+}
+
+.u\:lh-ui {
+    line-height: var(--lh-ui);
+}
+
+.u\:lh-snug {
+    line-height: var(--lh-snug);
+}
+
+.u\:lh-condensed {
+    line-height: var(--lh-condensed);
+}
+
+.u\:lh-standard {
+    line-height: var(--lh-standard);
+}
+
+.u\:lh-expanded {
+    line-height: var(--lh-expanded);
+}
+
+.u\:lh-loose {
+    line-height: var(--lh-loose);
+}

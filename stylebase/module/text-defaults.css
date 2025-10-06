@@ -1,6 +1,7 @@
 body {
     font-family: var(--ff-sans);
     font-size: var(--fs-1);
+    line-height: var(--lh-standard);
 }
 
 h1,
@@ -15,13 +16,13 @@ h6 {
 h1,
 h2,
 h3 {
-    line-height: 1.2;
+    line-height: var(--lh-snug);
 }
 
 h4,
 h5,
 h6 {
-    line-height: 1.4;
+    line-height: var(--lh-condensed);
 }
 
 h1 {
@@ -53,19 +54,8 @@ h6 {
 }
 
 p {
-    line-height: 1.5;
+    line-height: var(--lh-standard);
     font-size: var(--fs-1);
-}
-
-article :where(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--ff-heading);
-    text-wrap: balance;
-}
-
-article p {
-    max-width: 68ch;
-    text-wrap: pretty;
-    width: 100%;
 }
 
 /*a {
