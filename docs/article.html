@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stylebase - Article Example</title>
+        <link rel="stylesheet" href="../stylebase/imports.css" />
+    </head>
+    <body>
+        <header class="l:root l:repel" id="top">
+            <div><a href="index.html">Stylebase</a></div>
+            <nav>
+                <ul class="l:ui-list l:river">
+                    <li><a href="index.html">defaults</a></li>
+                    <li><a href="forms.html">forms</a></li>
+                    <li><a href="text.html">text</a></li>
+                    <li><a href="article.html">article</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="l:root">
+            <article>
+                <hgroup>
+                    <h1>
+                        The Voyager Missions: Humanity's Message to the Cosmos
+                    </h1>
+                    <p class="u:fs-4">The Grand Tour of the Solar System</p>
+                    <p>by <a href="#">Firstname Lastname</a></p>
+                </hgroup>
+                <section>
+                    <p>
+                        The Voyager missions, launched by NASA in the late
+                        1970s, were designed to take advantage of a rare
+                        alignment of the outer planets. These missions marked a
+                        significant milestone in our quest to explore the solar
+                        system. <strong>Voyager 1</strong> and
+                        <strong>Voyager 2</strong> have since journeyed far
+                        beyond their original destinations, entering
+                        interstellar space and continuing to relay invaluable
+                        data back to Earth.
+                    </p>
+                    <hr />
+                    <p>
+                        <span id="fn-voyager-missions">The Voyager missions</span><sup
+                            ><a href="#voyager-missions">1</a></sup
+                        >, launched by NASA in the late 1970s, represent one of
+                        humanity's most significant forays into deep space. The
+                        two spacecraft,
+                        <a
+                            href="https://www.nasa.gov/mission/voyager"
+                            target="_blank"
+                            >Voyager 1</a
+                        >
+                        and <em>Voyager 2</em>, were designed to take advantage
+                        of a rare planetary alignment to explore the outer
+                        planets. Voyager 1, launched on September 5, 1977,
+                        focused on Jupiter and Saturn, providing unprecedented
+                        <em>groundbreaking</em> insights into these gas giants
+                        and their moons.
+                    </p>
+                    <p>
+                        As of 2023, Voyager 1 is the most distant human-made
+                        object in space, traveling beyond the heliosphere, the
+                        outer limit of the Sun's magnetic influence. Voyager 2,
+                        launched on August 20, 1977, took a longer trajectory
+                        and became the only spacecraft to visit Uranus and
+                        Neptune. Both missions have
+                        <em>exceeded their original goals</em> and continue to
+                        relay valuable scientific data. Interestingly, each
+                        Voyager carries a <strong>Golden Record</strong>, a
+                        12-inch gold-plated copper disk containing sounds and
+                        images selected to portray the diversity of life and
+                        culture on Earth, serving as a message to possible
+                        extraterrestrial life. As of now, the Voyager spacecraft
+                        are expected to run out of power and cease operations by
+                        2025, but their journey into the unknown continues to
+                        inspire and intrigue.
+                    </p>
+                    <p>
+                        This program demonstrates basic Voyager spacecraft
+                        communication monitoring. The
+                        <code>DISTANCE</code> variable stores the spacecraft's
+                        range in kilometers, which at 24 billion km represents
+                        Voyager 1's approximate distance from Earth. The
+                        subroutine <code>COMPUTE_SIGNAL</code> calculates signal
+                        strength degradation over this vast distance. The
+                        conditional block beginning with
+                        <code>IF (SIGNAL .LT. 0.001)</code> checks whether the
+                        received signal falls below a critical threshold,
+                        setting <code>STATUS = 1</code> to flag potential
+                        communication issues. This type of code was essential
+                        for the Deep Space Network operators monitoring the
+                        Voyager probes as they ventured into interstellar space.
+                    </p>
+                    <pre>
+                        <code data-lang=""fortran">
+C     Voyager Telemetry Data Processor
+        PROGRAM VOYAGER
+        IMPLICIT NONE
+        REAL DISTANCE, SIGNAL
+        INTEGER STATUS
+
+        DISTANCE = 24000000000.0
+        CALL COMPUTE_SIGNAL(DISTANCE, SIGNAL)
+
+        IF (SIGNAL .LT. 0.001) THEN
+            STATUS = 1
+            PRINT *, 'WARNING: Weak signal'
+        END IF
+
+        END PROGRAM VOYAGER
+                        </code>
+                    </pre>
+                    <hr />
+                    <blockquote>
+                        <p>
+                            "We embarked on the ultimate journey of discovery,
+                            hoping to answer the age-old question: Are we
+                            alone?"
+                        </p>
+                        <p>—Carl Sagan, <cite>Cosmos</cite></p>
+                    </blockquote>
+                    <h2>Key Objectives</h2>
+                    <p>
+                        The primary objectives of the Voyager missions were to:
+                    </p>
+                    <ul>
+                        <li>Conduct close-up studies of Jupiter and Saturn</li>
+                        <li>Explore the larger moons of these planets</li>
+                        <li>Investigate the edge of our solar system</li>
+                    </ul>
+                    <h3>The Voyagers' Discoveries</h3>
+                    <p>
+                        The discoveries made by the Voyagers were
+                        groundbreaking:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Jupiter's Moons:</strong> Revealing volcanic
+                            activity on Io
+                            <ul>
+                                <li>Galilean moons</li>
+                                <li>Ring system</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Saturn's Rings:</strong> Detailed images of
+                            Saturn's complex ring system
+                        </li>
+                        <li>
+                            <strong>Interstellar Space:</strong> First
+                            human-made objects to enter interstellar space
+                        </li>
+                    </ul>
+                    <h2>Instruments Onboard</h2>
+                    <pre>
+Voyager 1 and Voyager 2 carried a variety of scientific instruments, including:
+- Imaging Science System (ISS)
+- Ultraviolet Spectrometer (UVS)
+- Triaxial Fluxgate Magnetometer (MAG)
+                    </pre>
+                    <p>For more detailed information, visit <a href="https://science.nasa.gov/mission/voyager/" target="_blank">NASA's Voyager Mission Page</a>.</p>
+                </section>
+                <h2>The Golden Record: A Message to the Stars</h2>
+                <p>One of the most fascinating aspects of the Voyager missions is the inclusion of the <strong>Golden Record</strong>. This phonograph record contains sounds and images selected to portray the diversity of life and culture on Earth.</p>
+                <h3>Contents of the Golden Record</h3>
+                <ul>
+                    <li><strong>Music:</strong> A selection of music from different cultures and eras</li>
+                    <li><strong>Sounds:</strong> Natural sounds of Earth, such as thunder and bird songs</li>
+                    <li><strong>Images:</strong> 116 photographs depicting life and human activities</li>
+                    <li><strong>Greetings:</strong> Spoken greetings in 55 languages</li>
+                </ul>
+                <h2>The Legacy of the Voyagers</h2>
+                <h3>Voyager's continuing Journey</h3>
+                <p>As of 2024, <mark>Voyager 1 is 14 billion miles from Earth</mark>, while Voyager 2 is slightly closer. Their journey continues, a testament to human ingenuity and the quest for knowledge.</p>
+                <p>Carl Sagan once said:</p>
+                <blockquote>
+                    <p>"The spacecraft will be encountered and the record played only if there are advanced spacefaring civilizations in interstellar space. But the launching of this 'bottle' into the cosmic 'ocean' says something very hopeful about life on this planet."</p>
+                </blockquote>
+                <h3>Future of Space Exploration</h3>
+                <p>The impact of the Voyager missions is immeasurable. They have inspired generations and paved the way for future explorations into the unknown.</p>
+                <h4>A Timeline of Voyager's Milestones</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1977</td>
+                            <td>Launch of Voyager 1 and Voyager 2</td>
+                        </tr>
+                        <tr>
+                            <td>1979</td>
+                            <td>First encounter with Jupiter</td>
+                        </tr>
+                        <tr>
+                            <td>1981</td>
+                            <td>Saturn flyby</td>
+                        </tr>
+                        <tr>
+                            <td>1990</td>
+                            <td>Pale Blue Dot image taken</td>
+                        </tr>
+                        <tr>
+                            <td>2012</td>
+                            <td>Voyager 1 enters interstellar space</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>Voyager 2 enters interstellar space</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <h2>Voyager's Impact on Science and Culture</h2>
+                <p>The Voyager missions have:</p>
+                <ol>
+                    <li><strong>Boldly explored</strong> regions of space never before visited</li>
+                    <li>provided <em>invaluable data</em> about our solar system</li>
+                    <li>sent a time capsule message to potential extraterrestrial life</li>
+                </ol>
+                <h3>Future Missions</h3>
+                <ol>
+                    <li>Plan new interstellar probes</li>
+                    <li>Analyze data from the edge of the solar system, heliosphere
+                        <ol>
+                            <li>heliosheath: the outer region of the heliosphere; the solar wind is compressed and turbulent</li>
+                            <li>heliopause: the boundary between the solar wind and interstellar wind where they are in equilibrium</li>
+                        </ol>
+                    </li>
+                    <li>Celebrate the legacy of the voyager missions</li>
+                </ol>
+                <p>The Voyager missions, highlighted here, are an enduring symbol of humanity's desire to explore and understand the vast universe. Their journey continues, carrying a message not just of who we are, but of our hopes and dreams for the future.</p>
+            </article>
+            <footer>
+                <hr />
+                <ol>
+                    <li id="voyager-missions">The Voyager missions are among the most significant endeavors in space exploration.<a href="#fn-voyager-missions">↩︎</a></li>
+                </ol>
+                <p>published <time datetime="2024-01-29 09:50:00">January 29, 2024 9:50 am</time></p>
+            </footer>
+        </main>
+        <footer class="l:root"><a href="#top">back to top</a></footer>
+    </body>
+</html>
