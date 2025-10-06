@@ -8,3 +8,9 @@ html {
 body {
     margin: 0;
 }
+
+hr {
+    border: unset;
+    background-color: red;
+    height: 1px;
+}
