@@ -12,7 +12,7 @@ npm i @taurean/stylebase
 ```
 
 **Direct download:**
-Download `stylebase.min.css` from the [latest release](https://github.com/taurean/stylebase/releases) or use the file in `dist/`.
+Download `stylebase.min.css` in `dist/`.
 
 ## Usage
 
