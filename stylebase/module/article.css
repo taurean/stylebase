@@ -1,3 +1,7 @@
+article {
+    font-size: var(--fs-2);
+}
+
 article :where(h1, h2, h3) {
     font-family: (--ff-heading);
 }
@@ -21,12 +25,13 @@ article h1 {
 }
 
 article hr {
-    max-inline-size: var(--hr-width, 68ch);
-    margin: unset;
+    max-inline-size: var(--hr-width, 40ch);
+    margin: 0 10ch;
 }
 
 article p {
     max-inline-size: 68ch;
+    font-size: inherit;
     text-wrap: pretty;
     font-family: var(--ff-content);
 }

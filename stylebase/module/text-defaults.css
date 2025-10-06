@@ -58,6 +58,10 @@ p {
     font-size: var(--fs-1);
 }
 
+p code {
+    font-family: var(--ff-mono);
+    font-size: 0.9em;
+}
 /*a {
 }
 
