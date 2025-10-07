@@ -2,7 +2,7 @@
 [![NPM Version](https://img.shields.io/npm/v/%40taurean%2Fstylebase?style=flat-square&logo=npm&logoColor=%23CB3837&label=NPM%20version%20%20%20%20&labelColor=%23ECEBEB)](https://www.npmjs.com/package/@taurean/stylebase) [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/taurean/stylebase?style=flat-square)](https://github.com/taurean/stylebase) [![GitHub Repo stars](https://img.shields.io/github/stars/taurean/stylebase?style=flat-square)](https://github.com/taurean/stylebase)
 
 
-An extremely barebones CSS framework(?) with utility classes, layout classes, design patterns, and design tokens for modern web development.
+An extremely barebones CSS framework(?) with utility classes, layout classes, and design tokens for content sites and web apps.
 
 ## Installation
 
@@ -16,7 +16,7 @@ Download `stylebase.min.css` in `dist/`.
 
 ## Usage
 
-Import globally **once** in your project as one of the earliest CSS files. This ensures design tokens and utility classes are available throughout your application.
+Import globally **once** in your project as one of the earliest CSS files. This ensures design tokens and utility classes are available throughout your project.
 
 ```css
 @import '@taurean/stylebase';
@@ -26,7 +26,7 @@ Import globally **once** in your project as one of the earliest CSS files. This 
 
 ## What's Included
 
-- **Color system** - Complete OKLCH color palette with 11 shades per hue
+- **Color system** - OKLCH-based color palette with 11 shades per hue
 - **Fluid typography** - Responsive font sizes using clamp()
 - **Fluid spacing** - Responsive spacing scale using clamp()
 - **CSS Grid layout** - 12-column grid with responsive gutters
