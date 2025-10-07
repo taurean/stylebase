@@ -2,6 +2,7 @@
 
 @import "module/article.css" layer(defaults);
 @import "module/color.css" layer(token);
+@import "module/color-defaults.css" layer(defaults);
 @import "module/font-family.css" layer(token);
 @import "module/font-size.css" layer(token);
 @import "module/generics.css" layer(defaults);
