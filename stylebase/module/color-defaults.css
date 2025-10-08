@@ -1,19 +1,20 @@
 :root {
-    --hue-bg: ;
-    --hue-fg: ;
-    --hue-fg: ;
+    --hue-z0-bg: var(--hue-neutral-50);
+    --hue-z0-fg: var(--hue-neutral-950);
+    --hue-z0-divider: color-mix(in oklch, currentColor 50%, transparent);
+    --hue-z1-bg: ;
+    --hue-z1-fg: ;
 }
 
 html,
 body {
-    background-color: var(--hue-neutral-50);
-    color: var(--hue-neutral-950);
+    background-color: var(--hue-z0-bg);
+    color: var(--hue-z0-fg);
 }
 
 @media (prefers-color-scheme: dark) {
-    html,
-    body {
-        background-color: var(--hue-neutral-950);
-        color: var(--hue-neutral-200);
+    :root {
+        --hue-z0-bg: var(--hue-neutral-950);
+        --hue-z0-fg: var(--hue-neutral-200);
     }
 }
