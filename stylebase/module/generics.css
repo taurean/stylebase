@@ -2,6 +2,7 @@
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
+    color-scheme: light dark;
     text-size-adjust: none;
 }
 
@@ -11,6 +12,13 @@ body {
 
 hr {
     border: unset;
-    background-color: red;
+    background-color: var(--hue-z0-divider);
     height: 1px;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    display: block;
 }

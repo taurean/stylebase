@@ -38,7 +38,7 @@
     "scripts": {
         "build": "postcss stylebase/imports.css -o dist/stylebase.min.css",
         "build:preview": "postcss stylebase/imports.css -o dist-preview/stylebase.css --no-map --env preview",
-        "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html' --startPath 'examples/'",
+        "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html' --startPath '/'",
         "release:patch": "git fetch gh && git pull gh main && npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
         "release:minor": "git fetch gh && git pull gh main && npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
         "release:major": "git fetch gh && git pull gh main && npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public"
