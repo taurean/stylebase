@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stylebase - Headless Primitives Example</title>
+        <link rel="stylesheet" href="../stylebase/imports.css" />
+        <!--
+            A no-JS mockup of the markup headless component libraries
+            (e.g. bits-ui) render, styled with only stylebase tokens.
+            Every selector below keys off the same data-attributes the
+            real components emit, so these recipes transfer verbatim.
+        -->
+        <style>
+            body {
+                padding-block-end: var(--space-3xl);
+            }
+
+            section {
+                margin-block-start: var(--space-xl);
+            }
+
+            /* --- raised card (z1 surface + z1 shadow) ------------- */
+            .card {
+                background-color: var(--hue-z1-bg);
+                color: var(--hue-z1-fg);
+                border: var(--border-w-thin) solid var(--hue-z1-border);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-z1);
+                padding: var(--space-lg);
+                max-inline-size: 40ch;
+            }
+
+            /* --- button ------------------------------------------- */
+            /* focus ring comes from stylebase's :focus-visible — not restyled here */
+            button {
+                background-color: var(--hue-z1-bg);
+                border: var(--border-w-thin) solid var(--hue-z1-border);
+                border-radius: var(--radius-md);
+                padding: var(--space-sm) var(--space-medium);
+                transition: background-color var(--duration-fast) var(--ease-out);
+            }
+
+            button:hover {
+                background-color: color-mix(in oklch, var(--hue-z1-bg) 92%, var(--hue-z0-fg));
+            }
+
+            /* --- dialog (bits-ui Dialog.Overlay / Dialog.Content) -- */
+            .dialog-overlay {
+                position: fixed;
+                inset: 0;
+                z-index: var(--layer-overlay);
+                background-color: var(--hue-backdrop);
+            }
+
+            .dialog-content {
+                position: fixed;
+                inset-block-start: 50%;
+                inset-inline-start: 50%;
+                translate: -50% -50%;
+                z-index: var(--layer-modal);
+                background-color: var(--hue-z2-bg);
+                color: var(--hue-z2-fg);
+                border: var(--border-w-thin) solid var(--hue-z2-border);
+                border-radius: var(--radius-xl);
+                box-shadow: var(--shadow-z3);
+                padding: var(--space-lg);
+                inline-size: min(90vw, 48ch);
+            }
+
+            /* enter/exit driven by the data-state the primitive sets */
+            .dialog-content[data-state="open"] {
+                animation: dialog-in var(--duration-slow) var(--ease-spring);
+            }
+
+            .dialog-content[data-state="closed"] {
+                animation: dialog-out var(--duration-base) var(--ease-in-out);
+            }
+
+            @keyframes dialog-in {
+                from {
+                    opacity: 0;
+                    translate: -50% -48%;
+                }
+            }
+
+            @keyframes dialog-out {
+                to {
+                    opacity: 0;
+                }
+            }
+
+            /* --- dropdown menu (bits-ui DropdownMenu.Content/Item) - */
+            .menu {
+                position: relative;
+                z-index: var(--layer-popover);
+                background-color: var(--hue-z2-bg);
+                border: var(--border-w-thin) solid var(--hue-z2-border);
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-z2);
+                padding: var(--space-xs);
+                inline-size: max-content;
+                min-inline-size: 20ch;
+                font-family: var(--ff-ui);
+                font-size: var(--fs-1);
+                line-height: var(--lh-ui);
+            }
+
+            .menu [role="menuitem"] {
+                border-radius: var(--radius-sm);
+                padding: var(--space-sm) var(--space-medium);
+            }
+
+            .menu [role="menuitem"][data-highlighted] {
+                background-color: color-mix(in oklch, var(--hue-z2-bg) 88%, var(--hue-z0-fg));
+            }
+
+            .menu [role="menuitem"][data-disabled] {
+                opacity: 0.5;
+            }
+
+            /* --- toast --------------------------------------------- */
+            .toast {
+                position: relative;
+                z-index: var(--layer-toast);
+                background-color: var(--hue-z2-bg);
+                border: var(--border-w-thin) solid var(--hue-z2-border);
+                border-inline-start: var(--border-w-thick) solid var(--hue-green-600);
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-z2);
+                padding: var(--space-medium) var(--space-lg);
+                inline-size: max-content;
+            }
+
+            /* static mockup helpers (not part of the recipes) */
+            .mock-viewport {
+                position: relative;
+                block-size: 20rem;
+                overflow: hidden;
+                border: var(--border-w-thin) solid var(--hue-z1-border);
+                border-radius: var(--radius-lg);
+            }
+
+            .mock-viewport .dialog-overlay,
+            .mock-viewport .dialog-content {
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="l:root l:repel" id="top">
+            <div><a href="index.html">Stylebase</a></div>
+            <nav>
+                <ul class="l:ui-list l:river">
+                    <li><a href="index.html">defaults</a></li>
+                    <li><a href="forms.html">forms</a></li>
+                    <li><a href="text.html">text</a></li>
+                    <li><a href="article.html">article</a></li>
+                    <li><a href="primitives.html">primitives</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="l:root l:waterfall">
+            <h1>Headless primitives</h1>
+            <p>
+                Static markup mirroring what bits-ui renders
+                (<code>data-state</code>, <code>data-highlighted</code>,
+                <code>data-disabled</code>), styled with stylebase tokens only.
+                Tab through the buttons to see the shared focus ring.
+            </p>
+
+            <section class="l:waterfall" style="--waterfall-gap: var(--space-medium)">
+                <h2>Surfaces + focus ring</h2>
+                <div class="card l:waterfall" style="--waterfall-gap: var(--space-sm)">
+                    <h3>Raised card (z1)</h3>
+                    <p>Uses <code>--hue-z1-*</code> with <code>--shadow-z1</code>.</p>
+                    <div class="l:river">
+                        <button type="button">Focusable</button>
+                        <button type="button">Also focusable</button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Dialog</h2>
+                <div class="mock-viewport">
+                    <div class="dialog-overlay"></div>
+                    <div class="dialog-content" data-state="open" role="dialog" aria-modal="true">
+                        <h3>Dialog title (z2 surface)</h3>
+                        <p>
+                            Overlay sits at <code>--layer-overlay</code> using
+                            <code>--hue-backdrop</code>; content at
+                            <code>--layer-modal</code> with <code>--shadow-z3</code>.
+                        </p>
+                        <button type="button">Close</button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Dropdown menu</h2>
+                <div class="menu" role="menu" data-state="open">
+                    <div role="menuitem" tabindex="0">Profile</div>
+                    <div role="menuitem" tabindex="0" data-highlighted>Settings (highlighted)</div>
+                    <div role="menuitem" data-disabled aria-disabled="true">Billing (disabled)</div>
+                    <div role="menuitem" tabindex="0">Log out</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Toast</h2>
+                <div class="toast" role="status">Saved — <code>--layer-toast</code></div>
+            </section>
+        </main>
+    </body>
+</html>
