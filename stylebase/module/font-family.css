@@ -41,6 +41,6 @@
     --ff-content: var(--ff-old-style);
     --ff-heading: var(--ff-rounded-sans-display);
     --ff-sans: var(--ff-neo-grotesque);
-    --ff-serif: var(--fftransitional);
+    --ff-serif: var(--ff-transitional);
     --ff-ui: var(--ff-system);
 }

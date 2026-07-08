@@ -16,4 +16,4 @@
 @import "module/ui-list.css" layer(stylebase-layout);
 @import "module/waterfall.css" layer(stylebase-layout);
 
-@import "module/text-util.css" layer(utility);
+@import "module/text-util.css" layer(stylebase-utility);

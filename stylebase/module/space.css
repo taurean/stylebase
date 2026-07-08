@@ -13,4 +13,7 @@
     --space-3xl: clamp(68.54px, 65.5711px + 0.9455vw, 82.25px);
     --space-4xl: clamp(110.9px, 106.0969px + 1.5297vw, 133.08px);
     --space-5xl: clamp(179.44px, 171.668px + 2.4752vw, 215.33px);
+
+    /* One-up paired step, 10px → 36px. Referenced by --grid-gutter in grid.css. */
+    --space-s-xl: clamp(0.625rem, 0.1321rem + 2.544vw, 2.25rem);
 }

@@ -3,11 +3,11 @@ article {
 }
 
 article :where(h1, h2, h3) {
-    font-family: (--ff-heading);
+    font-family: var(--ff-heading);
 }
 
 article :where(h4, h5, h6) {
-    font-family: (--ff-sans);
+    font-family: var(--ff-sans);
 }
 
 article :where(h1, h2, h3, h4, h5, h6) {
