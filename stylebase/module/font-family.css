@@ -37,6 +37,12 @@
     --ff-system: system-ui, sans-serif;
     --ff-transitional:
         Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+    /* weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
     /* aliases */
     --ff-content: var(--ff-old-style);
     --ff-heading: var(--ff-rounded-sans-display);

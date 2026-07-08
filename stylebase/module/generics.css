@@ -1,8 +1,13 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ via Andy Bell's post on his updated reset */
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
-    color-scheme: light dark;
     text-size-adjust: none;
 }
 
@@ -19,6 +24,30 @@ hr {
 img,
 svg,
 video {
-    max-width: 100%;
+    max-inline-size: 100%;
     display: block;
+}
+
+/*
+ * Normalize inheritance only — visual control styling is the
+ * consumer's job (e.g. on headless primitives).
+ */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+
+/*
+ * One focus ring for everything focusable, headless primitives
+ * included. Outline (not box-shadow) so it survives overflow clipping
+ * and forced-colors mode. Retune via the --focus-ring-* / --hue-focus-ring
+ * tokens rather than restyling per component.
+ */
+:focus-visible {
+    outline: var(--focus-ring-width) solid var(--hue-focus-ring);
+    outline-offset: var(--focus-ring-offset);
 }

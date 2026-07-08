@@ -1,20 +1,45 @@
+/*
+ * Semantic color roles built on the primitives in color.css.
+ * All pairs use light-dark(), driven by color-scheme: the default
+ * follows the OS; a consumer (or theme toggle) can force either mode
+ * by setting data-theme="light|dark" on <html> or any subtree.
+ *
+ * Surfaces are an elevation ramp: z0 = page, z1 = raised (cards),
+ * z2 = overlay (dialog/popover). Dark surfaces step *lighter* as
+ * elevation rises; pair them with the matching --shadow-z* token.
+ */
+[data-theme="light"] {
+    color-scheme: light;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
 :root {
-    --hue-z0-bg: var(--hue-neutral-50);
-    --hue-z0-fg: var(--hue-neutral-950);
+    color-scheme: light dark;
+
+    --hue-z0-bg: light-dark(var(--hue-neutral-50), var(--hue-neutral-950));
+    --hue-z0-fg: light-dark(var(--hue-neutral-950), var(--hue-neutral-200));
     --hue-z0-divider: color-mix(in oklch, currentColor 50%, transparent);
-    --hue-z1-bg: ;
-    --hue-z1-fg: ;
+
+    --hue-z1-bg: light-dark(var(--hue-neutral-100), var(--hue-neutral-900));
+    --hue-z1-fg: var(--hue-z0-fg);
+    --hue-z1-border: light-dark(var(--hue-neutral-200), var(--hue-neutral-800));
+
+    --hue-z2-bg: light-dark(var(--hue-neutral-50), var(--hue-neutral-900));
+    --hue-z2-fg: var(--hue-z0-fg);
+    --hue-z2-border: light-dark(var(--hue-neutral-200), var(--hue-neutral-700));
+
+    /* interaction hooks */
+    --hue-focus-ring: light-dark(var(--hue-blue-600), var(--hue-blue-400));
+    --hue-link: light-dark(var(--hue-blue-700), var(--hue-blue-300));
+    /* for dialog overlays / ::backdrop */
+    --hue-backdrop: color-mix(in oklch, var(--hue-neutral-950) 40%, transparent);
 }
 
 html,
 body {
     background-color: var(--hue-z0-bg);
     color: var(--hue-z0-fg);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --hue-z0-bg: var(--hue-neutral-950);
-        --hue-z0-fg: var(--hue-neutral-200);
-    }
 }

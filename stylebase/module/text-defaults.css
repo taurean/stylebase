@@ -4,13 +4,17 @@ body {
     line-height: var(--lh-standard);
 }
 
+/*
+ * Deliberate: headings are normal-weight; hierarchy comes from size
+ * alone. Opt into weight by setting --fw-heading (e.g. var(--fw-bold)).
+ */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-weight: unset;
+    font-weight: var(--fw-heading, var(--fw-regular));
 }
 
 h1,
@@ -61,4 +65,9 @@ p {
 p code {
     font-family: var(--ff-mono);
     font-size: 0.9em;
+}
+
+a:not([class]) {
+    color: var(--hue-link);
+    text-underline-offset: 0.15em;
 }
