@@ -1,0 +1,38 @@
+{
+    "extends": ["stylelint-config-standard"],
+    "plugins": ["stylelint-value-no-unknown-custom-properties"],
+    "rules": {
+        "csstools/value-no-unknown-custom-properties": [
+            true,
+            {
+                "importFrom": [
+                    "stylebase/module/color.css",
+                    "stylebase/module/color-defaults.css",
+                    "stylebase/module/font-family.css",
+                    "stylebase/module/font-size.css",
+                    "stylebase/module/space.css",
+                    "stylebase/module/grid.css"
+                ]
+            }
+        ],
+        "selector-class-pattern": [
+            "^(l|u)\\\\?:[a-z0-9-]+$",
+            {
+                "message": "Classes are namespaced with an escaped colon: l\\:name (layout) or u\\:name (utility)"
+            }
+        ],
+        "layer-name-pattern": null,
+        "custom-property-empty-line-before": null,
+        "declaration-empty-line-before": null,
+        "import-notation": "string",
+        "hue-degree-notation": "number",
+        "value-keyword-case": null,
+        "at-rule-empty-line-before": null,
+        "comment-empty-line-before": null,
+        "property-no-vendor-prefix": [
+            true,
+            { "ignoreProperties": ["/text-size-adjust$/"] }
+        ],
+        "no-descending-specificity": null
+    }
+}

@@ -1,11 +1,10 @@
 .l\:grid {
-    column-gap: var(--grid-gutter);
     display: grid;
+    gap: 0 var(--grid-gutter);
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
     margin-inline: auto;
     max-width: var(--grid-max-width);
     padding-inline: var(--grid-gutter);
-    row-gap: 0;
 }
 
 [data-grid-columns="quarter"] {

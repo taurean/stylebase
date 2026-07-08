@@ -23,9 +23,8 @@
     --fs-9: clamp(3.2249rem, 2.7131rem + 2.6075vw, 5.5879rem);
     /* Step 10: 61.9174px → 111.7587px */
     --fs-10: clamp(3.8698rem, 3.1953rem + 3.4373vw, 6.9849rem);
-}
 
-:root {
+    /* line heights */
     --lh-ui: 1;
     --lh-snug: 1.15;
     --lh-condensed: 1.35;
