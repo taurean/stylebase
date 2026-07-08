@@ -1,3 +1,8 @@
+/*
+ * Horizontal flow: space between siblings, none at the edges.
+ * Margin-based (not flex gap) so it works with any child display and
+ * composes with other layouts. API: --river-gap (default 1em).
+ */
 .l\:river > * {
     margin-inline: 0;
 }

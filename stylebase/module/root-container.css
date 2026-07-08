@@ -1,6 +1,10 @@
+/*
+ * Page-level centered container: caps line length at the grid's max
+ * width and keeps fluid gutters at the viewport edges.
+ */
 .l\:root {
     display: block;
     margin-inline: auto;
-    max-width: var(--grid-max-width);
+    max-inline-size: var(--grid-max-width);
     padding-inline: var(--grid-gutter);
 }

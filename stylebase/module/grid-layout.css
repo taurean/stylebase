@@ -1,24 +1,29 @@
+/*
+ * 12-column page grid. Children opt into spans with
+ * data-grid-columns="quarter|third|half|full" (scoped to direct
+ * children so unrelated data-attributes elsewhere can never collide).
+ */
 .l\:grid {
     display: grid;
     gap: 0 var(--grid-gutter);
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
     margin-inline: auto;
-    max-width: var(--grid-max-width);
+    max-inline-size: var(--grid-max-width);
     padding-inline: var(--grid-gutter);
 }
 
-[data-grid-columns="quarter"] {
+.l\:grid > [data-grid-columns="quarter"] {
     grid-column: span calc(var(--grid-columns) / 4);
 }
 
-[data-grid-columns="third"] {
+.l\:grid > [data-grid-columns="third"] {
     grid-column: span calc(var(--grid-columns) / 3);
 }
 
-[data-grid-columns="half"] {
+.l\:grid > [data-grid-columns="half"] {
     grid-column: span calc(var(--grid-columns) / 2);
 }
 
-[data-grid-columns="full"] {
+.l\:grid > [data-grid-columns="full"] {
     grid-column: span var(--grid-columns);
 }

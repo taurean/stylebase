@@ -1,5 +1,11 @@
+/*
+ * Push children to opposite ends of the row, wrapping when they no
+ * longer fit. API: --repel-gap (min space between children).
+ */
 .l\:repel {
-    display: flex !important;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: var(--repel-gap, var(--space-medium));
 }

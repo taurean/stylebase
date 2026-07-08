@@ -1,3 +1,7 @@
+/*
+ * Vertical stack: space between siblings, none at the edges (the
+ * "owl" pattern). API: --waterfall-gap (default 2em).
+ */
 .l\:waterfall > * {
     margin-block: 0;
 }
