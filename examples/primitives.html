@@ -161,7 +161,10 @@
             </nav>
         </header>
         <main class="l:root l:waterfall">
-            <h1>Headless primitives</h1>
+            <div class="l:repel">
+                <h1>Headless primitives</h1>
+                <button type="button" id="theme-toggle">toggle light/dark</button>
+            </div>
             <p>
                 Static markup mirroring what bits-ui renders
                 (<code>data-state</code>, <code>data-highlighted</code>,
@@ -212,5 +215,14 @@
                 <div class="toast" role="status">Saved — <code>--layer-toast</code></div>
             </section>
         </main>
+        <script>
+            // data-theme forces a mode; removing it returns to OS preference
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                const html = document.documentElement;
+                const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+                const current = html.dataset.theme ?? (dark ? "dark" : "light");
+                html.dataset.theme = current === "dark" ? "light" : "dark";
+            });
+        </script>
     </body>
 </html>

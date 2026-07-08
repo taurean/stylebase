@@ -40,9 +40,10 @@
         "build:preview": "postcss stylebase/imports.css -o dist-preview/stylebase.css --no-map --env preview",
         "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html,index.html' --startPath '/'",
         "lint": "stylelint \"stylebase/**/*.css\"",
-        "release:patch": "npm run lint && git fetch gh && git pull gh main && npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
-        "release:minor": "npm run lint && git fetch gh && git pull gh main && npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
-        "release:major": "npm run lint && git fetch gh && git pull gh main && npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public"
+        "check:skill": "node scripts/check-skill-tokens.mjs",
+        "release:patch": "npm run lint && npm run check:skill && git fetch gh && git pull gh main && npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
+        "release:minor": "npm run lint && npm run check:skill && git fetch gh && git pull gh main && npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
+        "release:major": "npm run lint && npm run check:skill && git fetch gh && git pull gh main && npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public"
     },
     "devDependencies": {
         "browser-sync": "^3.0.4",
