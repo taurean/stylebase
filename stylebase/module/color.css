@@ -1,5 +1,13 @@
+/*
+ * Color primitives, modeled on Evil Martians' Harmony palette
+ * (https://evilmartians.com/opensource/harmony).
+ * Naming: --hue-<name>-<step>, steps 50 (lightest) → 950 (darkest).
+ * Each step holds lightness ~constant across hues so different hues at
+ * the same step are interchangeable in contrast terms; 500 is the
+ * "brand" stop. Prefer the semantic tokens in color-defaults.css for
+ * surfaces/text; reach for primitives when building accents.
+ */
 :root {
-    /* primatives */
     --hue-red-50: oklch(98.83% 0.005 20);
     --hue-red-100: oklch(96.68% 0.02 20);
     --hue-red-200: oklch(92.19% 0.04 20);
@@ -99,17 +107,17 @@
     --hue-cyan-800: oklch(39.65% 0.09 180);
     --hue-cyan-900: oklch(28.91% 0.07 180);
     --hue-cyan-950: oklch(18.16% 0.04 180);
-    --hue-lightBlue-50: oklch(98.83% 0.005 210);
-    --hue-lightBlue-100: oklch(96.29% 0.02 210);
-    --hue-lightBlue-200: oklch(91.41% 0.04 210);
-    --hue-lightBlue-300: oklch(84.57% 0.08 210);
-    --hue-lightBlue-400: oklch(77.73% 0.11 210);
-    --hue-lightBlue-500: oklch(70.9% 0.15 210);
-    --hue-lightBlue-600: oklch(59.57% 0.14 210);
-    --hue-lightBlue-700: oklch(50.78% 0.12 210);
-    --hue-lightBlue-800: oklch(39.84% 0.09 210);
-    --hue-lightBlue-900: oklch(29.1% 0.07 210);
-    --hue-lightBlue-950: oklch(18.16% 0.04 210);
+    --hue-light-blue-50: oklch(98.83% 0.005 210);
+    --hue-light-blue-100: oklch(96.29% 0.02 210);
+    --hue-light-blue-200: oklch(91.41% 0.04 210);
+    --hue-light-blue-300: oklch(84.57% 0.08 210);
+    --hue-light-blue-400: oklch(77.73% 0.11 210);
+    --hue-light-blue-500: oklch(70.9% 0.15 210);
+    --hue-light-blue-600: oklch(59.57% 0.14 210);
+    --hue-light-blue-700: oklch(50.78% 0.12 210);
+    --hue-light-blue-800: oklch(39.84% 0.09 210);
+    --hue-light-blue-900: oklch(29.1% 0.07 210);
+    --hue-light-blue-950: oklch(18.16% 0.04 210);
     --hue-blue-50: oklch(98.83% 0.005 240);
     --hue-blue-100: oklch(96.48% 0.02 240);
     --hue-blue-200: oklch(91.6% 0.04 240);
@@ -154,17 +162,17 @@
     --hue-purple-800: oklch(41.8% 0.09 300);
     --hue-purple-900: oklch(30.66% 0.07 300);
     --hue-purple-950: oklch(19.53% 0.04 300);
-    --hue-fuschia-50: oklch(98.83% 0.005 320);
-    --hue-fuschia-100: oklch(96.68% 0.02 320);
-    --hue-fuschia-200: oklch(92.19% 0.04 320);
-    --hue-fuschia-300: oklch(86.13% 0.08 320);
-    --hue-fuschia-400: oklch(80.08% 0.11 320);
-    --hue-fuschia-500: oklch(74.22% 0.15 320);
-    --hue-fuschia-600: oklch(62.7% 0.14 320);
-    --hue-fuschia-700: oklch(53.52% 0.12 320);
-    --hue-fuschia-800: oklch(41.99% 0.09 320);
-    --hue-fuschia-900: oklch(30.86% 0.07 320);
-    --hue-fuschia-950: oklch(19.53% 0.04 320);
+    --hue-fuchsia-50: oklch(98.83% 0.005 320);
+    --hue-fuchsia-100: oklch(96.68% 0.02 320);
+    --hue-fuchsia-200: oklch(92.19% 0.04 320);
+    --hue-fuchsia-300: oklch(86.13% 0.08 320);
+    --hue-fuchsia-400: oklch(80.08% 0.11 320);
+    --hue-fuchsia-500: oklch(74.22% 0.15 320);
+    --hue-fuchsia-600: oklch(62.7% 0.14 320);
+    --hue-fuchsia-700: oklch(53.52% 0.12 320);
+    --hue-fuchsia-800: oklch(41.99% 0.09 320);
+    --hue-fuchsia-900: oklch(30.86% 0.07 320);
+    --hue-fuchsia-950: oklch(19.53% 0.04 320);
     --hue-pink-50: oklch(98.83% 0.005 340);
     --hue-pink-100: oklch(96.68% 0.02 340);
     --hue-pink-200: oklch(92.38% 0.04 340);
@@ -198,17 +206,6 @@
     --hue-slate-800: oklch(41.21% 0.02 275);
     --hue-slate-900: oklch(30.27% 0.02 275);
     --hue-slate-950: oklch(19.34% 0.02 275);
-    --hue-gray-50: oklch(98.83% 0.005 275);
-    --hue-gray-100: oklch(96.48% 0.02 275);
-    --hue-gray-200: oklch(91.8% 0.02 275);
-    --hue-gray-300: oklch(85.35% 0.02 275);
-    --hue-gray-400: oklch(78.91% 0.02 275);
-    --hue-gray-500: oklch(72.66% 0.02 275);
-    --hue-gray-600: oklch(61.33% 0.02 275);
-    --hue-gray-700: oklch(52.34% 0.02 275);
-    --hue-gray-800: oklch(41.21% 0.02 275);
-    --hue-gray-900: oklch(30.27% 0.02 275);
-    --hue-gray-950: oklch(19.34% 0.02 275);
     --hue-zinc-50: oklch(98.83% 0.005 275);
     --hue-zinc-100: oklch(96.48% 0.01 275);
     --hue-zinc-200: oklch(91.8% 0.01 275);
@@ -220,7 +217,7 @@
     --hue-zinc-800: oklch(41.21% 0.01 275);
     --hue-zinc-900: oklch(30.27% 0.01 275);
     --hue-zinc-950: oklch(19.34% 0.01 275);
-    --hue-neutral-50: oklch(98.83% 0.005 0);
+    --hue-neutral-50: oklch(98.83% 0 0);
     --hue-neutral-100: oklch(96.48% 0 0);
     --hue-neutral-200: oklch(91.8% 0 0);
     --hue-neutral-300: oklch(85.35% 0 0);
@@ -242,17 +239,6 @@
     --hue-stone-800: oklch(41.21% 0.01 75);
     --hue-stone-900: oklch(30.27% 0.01 75);
     --hue-stone-950: oklch(19.34% 0.01 75);
-    --hue-sand-50: oklch(98.83% 0.008 75);
-    --hue-sand-100: oklch(96.48% 0.01 75);
-    --hue-sand-200: oklch(91.8% 0.01 75);
-    --hue-sand-300: oklch(85.35% 0.01 75);
-    --hue-sand-400: oklch(78.91% 0.01 75);
-    --hue-sand-500: oklch(72.66% 0.01 75);
-    --hue-sand-600: oklch(61.33% 0.01 75);
-    --hue-sand-700: oklch(52.34% 0.01 75);
-    --hue-sand-800: oklch(41.21% 0.01 75);
-    --hue-sand-900: oklch(30.27% 0.01 75);
-    --hue-sand-950: oklch(19.34% 0.01 75);
     --hue-olive-50: oklch(98.83% 0.008 120);
     --hue-olive-100: oklch(96.48% 0.01 120);
     --hue-olive-200: oklch(91.8% 0.01 120);
