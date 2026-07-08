@@ -1,19 +1,29 @@
 @layer webfont, stylebase-token, token, stylebase-default, default, stylebase-utility, utility, stylebase-layout, layout;
 
-@import "module/article.css" layer(stylebase-default);
+/* tokens */
 @import "module/color.css" layer(stylebase-token);
-@import "module/color-defaults.css" layer(stylebase-default);
 @import "module/font-family.css" layer(stylebase-token);
 @import "module/font-size.css" layer(stylebase-token);
-@import "module/generics.css" layer(stylebase-default);
-@import "module/grid-layout.css" layer(stylebase-layout);
+@import "module/space.css" layer(stylebase-token);
+@import "module/radius.css" layer(stylebase-token);
+@import "module/border.css" layer(stylebase-token);
+@import "module/elevation.css" layer(stylebase-token);
+@import "module/motion.css" layer(stylebase-token);
 @import "module/grid.css" layer(stylebase-token);
+
+/* defaults */
+@import "module/generics.css" layer(stylebase-default);
+@import "module/color-defaults.css" layer(stylebase-default);
+@import "module/text-defaults.css" layer(stylebase-default);
+@import "module/article.css" layer(stylebase-default);
+
+/* utilities */
+@import "module/text-util.css" layer(stylebase-utility);
+
+/* layouts */
+@import "module/grid-layout.css" layer(stylebase-layout);
 @import "module/repel.css" layer(stylebase-layout);
 @import "module/river.css" layer(stylebase-layout);
 @import "module/root-container.css" layer(stylebase-layout);
-@import "module/space.css" layer(stylebase-token);
-@import "module/text-defaults.css" layer(stylebase-default);
 @import "module/ui-list.css" layer(stylebase-layout);
 @import "module/waterfall.css" layer(stylebase-layout);
-
-@import "module/text-util.css" layer(stylebase-utility);

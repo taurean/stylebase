@@ -1,0 +1,14 @@
+:root {
+    /* 2px */
+    --radius-xs: 0.125rem;
+    /* 4px */
+    --radius-sm: 0.25rem;
+    /* 6px */
+    --radius-md: 0.375rem;
+    /* 10px */
+    --radius-lg: 0.625rem;
+    /* 16px */
+    --radius-xl: 1rem;
+    /* pill/circle; oversized so it never flattens on large elements */
+    --radius-full: 999rem;
+}

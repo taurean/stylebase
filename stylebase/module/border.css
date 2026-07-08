@@ -1,0 +1,9 @@
+:root {
+    --border-w-thin: 1px;
+    --border-w-standard: 2px;
+    --border-w-thick: 3px;
+
+    /* consumed by the global :focus-visible rule in generics.css */
+    --focus-ring-width: var(--border-w-standard);
+    --focus-ring-offset: 2px;
+}

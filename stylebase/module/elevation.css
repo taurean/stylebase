@@ -1,0 +1,33 @@
+:root {
+    /*
+     * Stacking scale. Semantic, not numeric: pick by role, never by
+     * out-bidding another z-index. Gaps leave room for consumer layers.
+     * Typical mapping for headless primitives (e.g. bits-ui):
+     * overlay = dialog backdrop, modal = dialog content,
+     * popover = popover/dropdown/tooltip/menu, toast = notifications.
+     */
+    --layer-base: 0;
+    --layer-raised: 10;
+    --layer-sticky: 100;
+    --layer-overlay: 1000;
+    --layer-modal: 1100;
+    --layer-popover: 1200;
+    --layer-toast: 1300;
+
+    /*
+     * Shadows keyed to the --hue-z* surface levels: z1 = raised card,
+     * z2 = overlay surface (dialog/popover), z3 = highest emphasis.
+     * Built from the neutral ramp via color-mix so themes can retune
+     * them by overriding --shadow-color alone.
+     */
+    --shadow-color: var(--hue-neutral-950);
+    --shadow-z1:
+        0 1px 2px color-mix(in oklch, var(--shadow-color) 10%, transparent),
+        0 1px 4px color-mix(in oklch, var(--shadow-color) 6%, transparent);
+    --shadow-z2:
+        0 2px 4px color-mix(in oklch, var(--shadow-color) 10%, transparent),
+        0 6px 16px color-mix(in oklch, var(--shadow-color) 10%, transparent);
+    --shadow-z3:
+        0 4px 8px color-mix(in oklch, var(--shadow-color) 12%, transparent),
+        0 16px 40px color-mix(in oklch, var(--shadow-color) 16%, transparent);
+}

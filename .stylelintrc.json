@@ -11,6 +11,10 @@
                     "stylebase/module/font-family.css",
                     "stylebase/module/font-size.css",
                     "stylebase/module/space.css",
+                    "stylebase/module/radius.css",
+                    "stylebase/module/border.css",
+                    "stylebase/module/elevation.css",
+                    "stylebase/module/motion.css",
                     "stylebase/module/grid.css"
                 ]
             }
