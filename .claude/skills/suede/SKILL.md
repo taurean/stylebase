@@ -1,23 +1,23 @@
 ---
-name: stylebase
+name: suede
 description: >-
-  Writing or reviewing CSS in a project that consumes @taurean/stylebase
-  (imports stylebase.min.css). Use when styling components, pages, or
-  headless primitives (bits-ui, Melt, Radix-style) with stylebase tokens,
+  Writing or reviewing CSS in a project that consumes @taurean/suede-css
+  (imports suede.min.css). Use when styling components, pages, or
+  headless primitives (bits-ui, Melt, Radix-style) with suede-css tokens,
   layers, l: layout classes, or u: utilities; when choosing colors, spacing,
   type sizes, radii, shadows, z-index, or motion values; when overriding
-  stylebase defaults; or when implementing dark mode / theming in a
+  suede-css defaults; or when implementing dark mode / theming in a
   consuming app.
 ---
 
-# Writing styles with stylebase
+# Writing styles with suede-css
 
-Stylebase is a CSS foundation, not a component library. It gives you design tokens, sane HTML defaults, six `l:` layout primitives, and a small set of `u:` typography/a11y utilities. Everything else — component styling included — is CSS you write, using the tokens.
+suede-css is a CSS foundation, not a component library. It gives you design tokens, sane HTML defaults, six `l:` layout primitives, and a small set of `u:` typography/a11y utilities. Everything else — component styling included — is CSS you write, using the tokens.
 
 ## The mental model
 
 1. **Tokens are the API.** Never hardcode a color, size, duration, shadow, or z-index; there is a token for it. Full catalog: [references/tokens.md](references/tokens.md).
-2. **The bare layers are yours.** Stylebase declares `@layer webfont, stylebase-token, token, stylebase-default, default, stylebase-utility, utility, stylebase-layout, layout`. Library code lives only in `stylebase-*` layers; each bare sibling comes later in the order, so anything you put there beats the library with no specificity games. Unlayered CSS (e.g. Svelte `<style>` blocks) beats *all* layers — that's fine and normal. Never write into a `stylebase-*` layer, never use `!important` against stylebase.
+2. **The bare layers are yours.** suede-css declares `@layer webfont, suede-token, token, suede-default, default, suede-utility, utility, suede-layout, layout`. Library code lives only in `suede-*` layers; each bare sibling comes later in the order, so anything you put there beats the library with no specificity games. Unlayered CSS (e.g. Svelte `<style>` blocks) beats *all* layers — that's fine and normal. Never write into a `suede-*` layer, never use `!important` against suede-css.
 3. **Defaults are opinions you can flip with one token.** Headings are normal-weight by design (`--fw-heading` opts into weight); links use `--hue-link`; every focusable element already has a correct `:focus-visible` ring — don't reinvent it.
 4. **Dark mode is already wired.** Semantic tokens (`--hue-z*`, `--hue-link`, …) use `light-dark()`; the OS preference just works, and `data-theme="light|dark"` on `<html>` (or any subtree) forces a mode. Build with semantic tokens and your components are theme-correct for free.
 5. **Utilities are typography + a11y only** (`u:fs-*`, `u:lh-*`, `u:ff-*`, `u:visually-hidden`). If you're reaching for a spacing or color class, write component CSS with tokens instead.

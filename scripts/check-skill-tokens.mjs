@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /*
- * Verifies .claude/skills/stylebase/references/tokens.md stays in sync
- * with the tokens actually declared in stylebase/module/*.css.
+ * Verifies .claude/skills/suede/references/tokens.md stays in sync
+ * with the tokens actually declared in suede/module/*.css.
  * Presence is machine-checked; prose stays human. Run: npm run check:skill
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
-const moduleDir = "stylebase/module";
-const docPath = ".claude/skills/stylebase/references/tokens.md";
+const moduleDir = "suede/module";
+const docPath = ".claude/skills/suede/references/tokens.md";
 
 // Consumer-settable hooks documented in tokens.md but (deliberately)
 // never declared in source — they only appear as var() fallbacks.
@@ -57,7 +57,7 @@ for (const token of documented) {
 }
 
 if (problems.length > 0) {
-    console.error(`tokens.md out of sync with stylebase/module/*.css:\n`);
+    console.error(`tokens.md out of sync with suede/module/*.css:\n`);
     for (const p of [...new Set(problems)].sort()) console.error(`  ✖ ${p}`);
     process.exit(1);
 }

@@ -1,12 +1,12 @@
-# Layer recipes — overriding and theming stylebase
+# Layer recipes — overriding and theming suede-css
 
-Stylebase declares this layer order (first line of its CSS):
+suede-css declares this layer order (first line of its CSS):
 
 ```css
-@layer webfont, stylebase-token, token, stylebase-default, default, stylebase-utility, utility, stylebase-layout, layout;
+@layer webfont, suede-token, token, suede-default, default, suede-utility, utility, suede-layout, layout;
 ```
 
-The library only writes into `stylebase-*` layers. Each bare name after it (`token`, `default`, `utility`, `layout`) is reserved for **you** and always wins against the library, regardless of selector specificity. Unlayered CSS beats every layer, so ordinary component styles (Svelte `<style>`, CSS modules) also always win. Consequence: **you never need `!important` against stylebase.** If an override isn't taking effect, the selector isn't matching — it's not a cascade problem.
+The library only writes into `suede-*` layers. Each bare name after it (`token`, `default`, `utility`, `layout`) is reserved for **you** and always wins against the library, regardless of selector specificity. Unlayered CSS beats every layer, so ordinary component styles (Svelte `<style>`, CSS modules) also always win. Consequence: **you never need `!important` against suede-css.** If an override isn't taking effect, the selector isn't matching — it's not a cascade problem.
 
 ## Override a default (element styling)
 
@@ -23,7 +23,7 @@ The library only writes into `stylebase-*` layers. Each bare name after it (`tok
 }
 ```
 
-Same-specificity selectors in `default` cleanly replace stylebase's (`stylebase-default`) versions.
+Same-specificity selectors in `default` cleanly replace suede-css's (`suede-default`) versions.
 
 ## Retheme a token
 
@@ -75,4 +75,4 @@ Tokens are just custom properties — override them on any element, no layer nee
 
 ## Adding your own utilities/layouts
 
-Put them in the bare `utility` / `layout` layers using the same escaped-colon convention if you want them to read as part of the system, or just write unlayered classes. Don't add to `stylebase-*`.
+Put them in the bare `utility` / `layout` layers using the same escaped-colon convention if you want them to read as part of the system, or just write unlayered classes. Don't add to `suede-*`.

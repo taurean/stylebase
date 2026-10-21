@@ -1,22 +1,22 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working **on** stylebase. For writing styles **with** stylebase in a consuming project, use the skill at `.claude/skills/stylebase/`.
+Guidance for Claude Code when working **on** suede-css. For writing styles **with** suede-css in a consuming project, use the skill at `.claude/skills/suede/`.
 
-## What stylebase is
+## What suede-css is
 
-A framework-agnostic CSS foundation: design tokens (OKLCH color, fluid Utopia type/space scales), opinionated HTML defaults, a small set of layout primitives, and a deliberately tiny utility set. Consumers import one file (`dist/stylebase.min.css` via `@taurean/stylebase`) and build component CSS on top of the tokens.
+A framework-agnostic CSS foundation: design tokens (OKLCH color, fluid Utopia type/space scales), opinionated HTML defaults, a small set of layout primitives, and a deliberately tiny utility set. Consumers import one file (`dist/suede.min.css` via `@taurean/suede-css`) and build component CSS on top of the tokens.
 
 ## Layer architecture (the core idea)
 
-`stylebase/imports.css` declares, in order:
+`suede/imports.css` declares, in order:
 
 ```css
-@layer webfont, stylebase-token, token, stylebase-default, default, stylebase-utility, utility, stylebase-layout, layout;
+@layer webfont, suede-token, token, suede-default, default, suede-utility, utility, suede-layout, layout;
 ```
 
-Every stylebase layer (`stylebase-*`) is immediately followed by a bare sibling (`token`, `default`, `utility`, `layout`) that stylebase **never writes into**. Because later layers win, a consumer can override anything by declaring into the bare sibling — no specificity games, no `!important`. This pairing is the library's contract:
+Every suede-css layer (`suede-*`) is immediately followed by a bare sibling (`token`, `default`, `utility`, `layout`) that suede-css **never writes into**. Because later layers win, a consumer can override anything by declaring into the bare sibling — no specificity games, no `!important`. This pairing is the library's contract:
 
-- **Library code goes only in `stylebase-*` layers.** Never import a module into a bare layer.
+- **Library code goes only in `suede-*` layers.** Never import a module into a bare layer.
 - `webfont`: webfont `@font-face` imports only (currently unused).
 - `*-token`: custom properties only — no selectors other than `:root` (plus `[data-theme]`/media queries that swap token values).
 - `*-default`: styles on HTML elements only, never classes.
@@ -24,7 +24,7 @@ Every stylebase layer (`stylebase-*`) is immediately followed by a bare sibling 
 
 ## Module organization
 
-- `stylebase/imports.css` is the **only** entry point. Every module lives in `stylebase/module/` and is imported with an explicit layer: `@import "module/file.css" layer(stylebase-token);`
+- `suede/imports.css` is the **only** entry point. Every module lives in `suede/module/` and is imported with an explicit layer: `@import "module/file.css" layer(suede-token);`
 - Group imports by layer (token block, then default, utility, layout) — not alphabetically.
 - One concern per file (color tokens ≠ color defaults ≠ typography defaults).
 
@@ -41,13 +41,13 @@ Every stylebase layer (`stylebase-*`) is immediately followed by a bare sibling 
 
 ## Build, lint, release
 
-- `npm run build` — minified CSS → `dist/stylebase.min.css` (committed; version banner added by `postcss.config.js`).
+- `npm run build` — minified CSS → `dist/suede.min.css` (committed; version banner added by `postcss.config.js`).
 - `npm run build:preview` — readable CSS → `dist-preview/` (gitignored; use it for human-reviewable diffs).
 - `npm run dev` — browser-sync server over `index.html` + `examples/`.
-- `npm run lint` — stylelint over `stylebase/**/*.css`; catches invalid values and undefined `var()` references. Run after every CSS change.
-- `npm run check:skill` — verifies every token declared in `stylebase/module/*.css` is documented in `.claude/skills/stylebase/references/tokens.md` and vice versa.
-- `npm run release:patch|minor|major` — assumes a git remote named `gh` (GitHub); versions, builds, commits `dist/`, pushes tags, publishes to npm. Only the user runs releases.
+- `npm run lint` — stylelint over `suede/**/*.css`; catches invalid values and undefined `var()` references. Run after every CSS change.
+- `npm run check:skill` — verifies every token declared in `suede/module/*.css` is documented in `.claude/skills/suede/references/tokens.md` and vice versa.
+- `npm run release:patch|minor|major` — pushes to the `origin` remote (GitHub); versions, builds, commits `dist/`, pushes tags, publishes to npm. Only the user runs releases.
 
 ## Keeping docs in sync
 
-When you add, rename, or remove a token or class: update `.claude/skills/stylebase/references/tokens.md` (enforced by `check:skill`), add a `CHANGELOG.md` entry (renames/removals get a migration line), and update `examples/` if the change is visible.
+When you add, rename, or remove a token or class: update `.claude/skills/suede/references/tokens.md` (enforced by `check:skill`), add a `CHANGELOG.md` entry (renames/removals get a migration line), and update `examples/` if the change is visible.

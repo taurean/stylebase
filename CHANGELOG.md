@@ -2,7 +2,26 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [0.12.0] — Unreleased
+## [0.12.1] — 2026-10-21
+
+Renamed from stylebase to suede-css. Version numbering continues from 0.12.0. `@taurean/stylebase` will be deprecated on npm with a pointer to the new package.
+
+### Migration table
+
+| Before | After |
+|---|---|
+| `npm i @taurean/stylebase` / `@import "@taurean/stylebase"` | `npm i @taurean/suede-css` / `@import "@taurean/suede-css"` |
+| `dist/stylebase.min.css` | `dist/suede.min.css` |
+| layers `stylebase-token`, `stylebase-default`, `stylebase-utility`, `stylebase-layout` | `suede-token`, `suede-default`, `suede-utility`, `suede-layout` |
+
+Overrides written into the bare `token` / `default` / `utility` / `layout` layers keep working unchanged. Act only if you re-declare the full `@layer` order in your own CSS or reference a `stylebase-*` layer by name.
+
+### Changed
+
+- Source directory `stylebase/` → `suede/`; Claude Code skill `.claude/skills/stylebase/` → `.claude/skills/suede/` (skill name `suede`)
+- Build banner reads `suede-css v<version>`
+
+## [0.12.0] — 2026-07-08
 
 ### Migration table
 

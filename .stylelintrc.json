@@ -6,16 +6,16 @@
             true,
             {
                 "importFrom": [
-                    "stylebase/module/color.css",
-                    "stylebase/module/color-defaults.css",
-                    "stylebase/module/font-family.css",
-                    "stylebase/module/font-size.css",
-                    "stylebase/module/space.css",
-                    "stylebase/module/radius.css",
-                    "stylebase/module/border.css",
-                    "stylebase/module/elevation.css",
-                    "stylebase/module/motion.css",
-                    "stylebase/module/grid.css"
+                    "suede/module/color.css",
+                    "suede/module/color-defaults.css",
+                    "suede/module/font-family.css",
+                    "suede/module/font-size.css",
+                    "suede/module/space.css",
+                    "suede/module/radius.css",
+                    "suede/module/border.css",
+                    "suede/module/elevation.css",
+                    "suede/module/motion.css",
+                    "suede/module/grid.css"
                 ]
             }
         ],

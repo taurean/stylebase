@@ -4,7 +4,7 @@ const pkg = require('./package.json');
 const addBannerFirst = {
   postcssPlugin: 'add-version-banner-first',
   Once(root) {
-    root.prepend({ type: 'comment', text: `stylebase v${pkg.version}` });
+    root.prepend({ type: 'comment', text: `suede-css v${pkg.version}` });
   }
 };
 
@@ -16,8 +16,8 @@ const addBannerLast = {
     const firstNode = root.first;
     
     // If it's not already our version comment, add it
-    if (!firstNode || firstNode.type !== 'comment' || !firstNode.text.includes(`stylebase v${pkg.version}`)) {
-      root.prepend({ type: 'comment', text: `stylebase v${pkg.version}` });
+    if (!firstNode || firstNode.type !== 'comment' || !firstNode.text.includes(`suede-css v${pkg.version}`)) {
+      root.prepend({ type: 'comment', text: `suede-css v${pkg.version}` });
     }
   }
 };

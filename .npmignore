@@ -3,6 +3,6 @@ examples/
 dist-preview/
 .git/
 .github/
-.claude/npm
+.claude/
 *.log
 .env*

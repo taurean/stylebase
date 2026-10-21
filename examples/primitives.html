@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Stylebase - Headless Primitives Example</title>
-        <link rel="stylesheet" href="../stylebase/imports.css" />
+        <title>suede-css - Headless Primitives Example</title>
+        <link rel="stylesheet" href="../suede/imports.css" />
         <!--
             A no-JS mockup of the markup headless component libraries
-            (e.g. bits-ui) render, styled with only stylebase tokens.
+            (e.g. bits-ui) render, styled with only suede-css tokens.
             Every selector below keys off the same data-attributes the
             real components emit, so these recipes transfer verbatim.
         -->
@@ -32,7 +32,7 @@
             }
 
             /* --- button ------------------------------------------- */
-            /* focus ring comes from stylebase's :focus-visible — not restyled here */
+            /* focus ring comes from suede-css's :focus-visible — not restyled here */
             button {
                 background-color: var(--hue-z1-bg);
                 border: var(--border-w-thin) solid var(--hue-z1-border);
@@ -149,7 +149,7 @@
     </head>
     <body>
         <header class="l:root l:repel" id="top">
-            <div><a href="index.html">Stylebase</a></div>
+            <div><a href="index.html">suede-css</a></div>
             <nav>
                 <ul class="l:ui-list l:river">
                     <li><a href="index.html">defaults</a></li>
@@ -168,7 +168,7 @@
             <p>
                 Static markup mirroring what bits-ui renders
                 (<code>data-state</code>, <code>data-highlighted</code>,
-                <code>data-disabled</code>), styled with stylebase tokens only.
+                <code>data-disabled</code>), styled with suede-css tokens only.
                 Tab through the buttons to see the shared focus ring.
             </p>
 

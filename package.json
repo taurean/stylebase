@@ -1,15 +1,15 @@
 {
-    "name": "@taurean/stylebase",
+    "name": "@taurean/suede-css",
     "version": "0.12.0",
     "description": "a starter set of CSS files",
-    "main": "dist/stylebase.min.css",
-    "style": "dist/stylebase.min.css",
+    "main": "dist/suede.min.css",
+    "style": "dist/suede.min.css",
     "exports": {
         ".": {
-            "style": "./dist/stylebase.min.css",
-            "default": "./dist/stylebase.min.css"
+            "style": "./dist/suede.min.css",
+            "default": "./dist/suede.min.css"
         },
-        "./css": "./dist/stylebase.min.css",
+        "./css": "./dist/suede.min.css",
         "./dist/*": "./dist/*"
     },
     "files": [
@@ -29,21 +29,21 @@
     "license": "SEE LICENSE IN LICENSE",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/taurean/stylebase.git"
+        "url": "git+https://github.com/taurean/suede-css.git"
     },
-    "homepage": "https://github.com/taurean/stylebase",
+    "homepage": "https://github.com/taurean/suede-css",
     "bugs": {
-        "url": "https://github.com/taurean/stylebase/issues"
+        "url": "https://github.com/taurean/suede-css/issues"
     },
     "scripts": {
-        "build": "postcss stylebase/imports.css -o dist/stylebase.min.css",
-        "build:preview": "postcss stylebase/imports.css -o dist-preview/stylebase.css --no-map --env preview",
-        "dev": "browser-sync start --server --files 'stylebase/**/*.css,examples/*.html,index.html' --startPath '/'",
-        "lint": "stylelint \"stylebase/**/*.css\"",
+        "build": "postcss suede/imports.css -o dist/suede.min.css",
+        "build:preview": "postcss suede/imports.css -o dist-preview/suede.css --no-map --env preview",
+        "dev": "browser-sync start --server --files 'suede/**/*.css,examples/*.html,index.html' --startPath '/'",
+        "lint": "stylelint \"suede/**/*.css\"",
         "check:skill": "node scripts/check-skill-tokens.mjs",
-        "release:patch": "npm run lint && npm run check:skill && git fetch gh && git pull gh main && npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
-        "release:minor": "npm run lint && npm run check:skill && git fetch gh && git pull gh main && npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public",
-        "release:major": "npm run lint && npm run check:skill && git fetch gh && git pull gh main && npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push gh main --tags && npm publish --access=public"
+        "release:patch": "npm run lint && npm run check:skill && git fetch origin && git pull origin main && npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public",
+        "release:minor": "npm run lint && npm run check:skill && git fetch origin && git pull origin main && npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public",
+        "release:major": "npm run lint && npm run check:skill && git fetch origin && git pull origin main && npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public"
     },
     "devDependencies": {
         "browser-sync": "^3.0.4",

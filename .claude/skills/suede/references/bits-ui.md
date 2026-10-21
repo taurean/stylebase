@@ -1,8 +1,8 @@
-# Styling headless primitives (bits-ui) with stylebase
+# Styling headless primitives (bits-ui) with suede-css
 
-bits-ui renders unstyled elements and communicates every piece of component state through **data-attributes** (`data-state="open|closed"`, `data-highlighted`, `data-disabled`, …). Style those attributes with stylebase tokens. A live no-JS reference of these recipes ships in stylebase's repo at `examples/primitives.html`.
+bits-ui renders unstyled elements and communicates every piece of component state through **data-attributes** (`data-state="open|closed"`, `data-highlighted`, `data-disabled`, …). Style those attributes with suede-css tokens. A live no-JS reference of these recipes ships in suede-css's repo at `examples/primitives.html`.
 
-## What stylebase already handles — don't redo these
+## What suede-css already handles — don't redo these
 
 - **Focus rings.** The global `:focus-visible` rule covers every trigger, item, and input. Don't add per-component focus styles; retune `--hue-focus-ring` / `--focus-ring-width` / `--focus-ring-offset` globally if needed.
 - **Form control inheritance.** `button/input/select/textarea` already inherit font and color.

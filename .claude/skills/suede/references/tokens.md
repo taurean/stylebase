@@ -1,6 +1,6 @@
-# Stylebase token catalog
+# suede-css token catalog
 
-All tokens are defined on `:root` in the `stylebase-token` / `stylebase-default` layers. Override any of them from `:root` in the bare `token` layer or unlayered CSS. Fluid tokens interpolate between a ~310–320px viewport (min) and ~1332–1764px (max).
+All tokens are defined on `:root` in the `suede-token` / `suede-default` layers. Override any of them from `:root` in the bare `token` layer or unlayered CSS. Fluid tokens interpolate between a ~310–320px viewport (min) and ~1332–1764px (max).
 
 ## Color primitives — `--hue-<name>-<step>`
 
