@@ -1,6 +1,6 @@
 # suede-css token catalog
 
-All tokens are defined on `:root` in the `suede-token` / `suede-default` layers. Override any of them from `:root` in the bare `token` layer or unlayered CSS. Fluid tokens interpolate between a ~310–320px viewport (min) and ~1332–1764px (max).
+All tokens are defined on `:root` in the `suede-token` layer. Override any of them from `:root` in the bare `token` layer or unlayered CSS. Tokens come in two kinds: primitives (raw values like `--hue-blue-700`, `--fs-3`) and roles (named decisions that point at primitives, like `--hue-link`, `--ff-heading`). Override a role to change one decision; override a primitive to change every role built on it. Fluid tokens interpolate between a ~310–320px viewport (min) and ~1332–1764px (max).
 
 ## Color primitives — `--hue-<name>-<step>`
 
@@ -71,9 +71,9 @@ Note the middle step is `--space-medium` (not `-md`) — intentional, don't "fix
 
 `--border-w-thin` (1px — default borders), `--border-w-standard` (2px), `--border-w-thick` (3px — emphasis edges). Focus ring geometry: `--focus-ring-width`, `--focus-ring-offset` (consumed by the global `:focus-visible` rule; retune rather than restyling focus per component).
 
-## Stacking — `--layer-*` (semantic z-index)
+## Stacking — `--z-*` (semantic z-index)
 
-`--layer-base: 0`, `--layer-raised: 10` (sticky-ish local raising), `--layer-sticky: 100` (sticky headers/rails), `--layer-overlay: 1000` (dialog backdrops), `--layer-modal: 1100` (dialog content), `--layer-popover: 1200` (popover/dropdown/tooltip/menu — above modals so they work *inside* dialogs), `--layer-toast: 1300`. Pick by role; never out-bid with raw numbers.
+`--z-base: 0`, `--z-raised: 10` (sticky-ish local raising), `--z-sticky: 100` (sticky headers/rails), `--z-overlay: 1000` (dialog backdrops), `--z-modal: 1100` (dialog content), `--z-popover: 1200` (popover/dropdown/tooltip/menu — above modals so they work *inside* dialogs), `--z-toast: 1300`. Pick by role; never out-bid with raw numbers.
 
 ## Shadows — `--shadow-z1..z3`
 
@@ -87,6 +87,6 @@ Note the middle step is `--space-medium` (not `-md`) — intentional, don't "fix
 
 `--grid-max-width` (83.25rem), `--grid-gutter` (= `--space-s-xl`), `--grid-columns` (12). Consumed by `l:grid` / `l:root`.
 
-## Layout class custom-property APIs (set on the element, not `:root`)
+## Hooks (never declared; set them on the element, an ancestor, or `:root`)
 
-`--waterfall-gap` (default 2em) for `l:waterfall`; `--river-gap` (1em) for `l:river`; `--repel-gap` (`--space-medium`) for `l:repel`.
+`--waterfall-gap` (default 2em) for `l:waterfall`; `--river-gap` (1em) for `l:river`; `--repel-gap` (`--space-medium`) for `l:repel`; `--hr-width` (40ch) for `<hr>` inside `<article>`. Set on a container, a hook also reaches nested layouts below it.

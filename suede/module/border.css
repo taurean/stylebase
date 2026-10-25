@@ -1,9 +1,20 @@
-:root {
-    --border-w-thin: 1px;
-    --border-w-standard: 2px;
-    --border-w-thick: 3px;
+@layer suede-token {
+    :root {
+        /* 2px */
+        --radius-xs: 0.125rem;
+        /* 4px */
+        --radius-sm: 0.25rem;
+        /* 6px */
+        --radius-md: 0.375rem;
+        /* 10px */
+        --radius-lg: 0.625rem;
+        /* 16px */
+        --radius-xl: 1rem;
+        /* pill/circle; oversized so it never flattens on large elements */
+        --radius-full: 999rem;
 
-    /* consumed by the global :focus-visible rule in generics.css */
-    --focus-ring-width: var(--border-w-standard);
-    --focus-ring-offset: 2px;
+        --border-w-thin: 1px;
+        --border-w-standard: 2px;
+        --border-w-thick: 3px;
+    }
 }

@@ -61,17 +61,17 @@ Library styles live only in the `suede-*` layers. The bare layers (`token`, `def
 }
 ```
 
-Dark mode follows the OS by default; force it with `data-theme="dark"` (or `"light"`) on `<html>` or any subtree.
+Dark mode follows the OS by default; force it with `data-theme="dark"` (or `"light"`) on `<html>`. On a subtree, `data-theme` switches the tokens inside it; the themed element paints its own background and text color with the surface tokens (e.g. `--hue-z1-bg` / `--hue-z1-fg`).
 
-**Claude Code users:** this repo ships a skill at `.claude/skills/suede/` for writing styles with suede-css — token catalog, override recipes, and headless-primitive (bits-ui) patterns. Copy it into a consuming project's `.claude/skills/`.
+**Claude Code users:** this repo ships a skill at `.claude/skills/suede/` for writing styles with suede-css — token catalog, override recipes, and conventions. Copy it into a consuming project's `.claude/skills/`.
 
 ## Contributing to suede-css + publishing changes
 
-Once changes are merged into `main`, run one of the release scripts (`npm run release:patch`, `npm run release:minor`, or `npm run release:major`) to lint, check docs sync, minify CSS, update the package.json version, and publish to [NPM](https://www.npmjs.com/package/@taurean/suede-css).
+Once changes are merged into `main`, run one of the release scripts (`pnpm release:patch`, `pnpm release:minor`, or `pnpm release:major`) to lint, check docs sync, minify CSS, update the package.json version, and publish to [NPM](https://www.npmjs.com/package/@taurean/suede-css).
 
-- `npm run build` — update the minified CSS in `dist/`, useful for testing output before publishing
-- `npm run build:preview` — write a non-minified CSS file to `dist-preview/` (gitignored) for human-readable diffs
-- `npm run lint` — stylelint over the source (catches invalid values and undefined `var()` references)
-- `npm run check:skill` — verify the skill's token catalog matches the source
-- `npm run dev` — live reload via browsersync to test the example HTML files while making style changes (files in `examples/` have no CSS of their own; they rely on suede-css's global styles and classes)
+- `pnpm build` — update the minified CSS in `dist/`, useful for testing output before publishing
+- `pnpm build:preview` — write a non-minified CSS file to `dist-preview/` (gitignored) for human-readable diffs
+- `pnpm lint` — stylelint over the source (catches invalid values and undefined `var()` references)
+- `pnpm check:skill` — verify the skill's token catalog matches the source
+- `pnpm dev` — live reload via browsersync to test the example HTML files while making style changes (files in `examples/` have no CSS of their own; they rely on suede-css's global styles and classes)
 - Release scripts assume the GitHub remote is named `gh`

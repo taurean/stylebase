@@ -1,0 +1,8 @@
+@layer suede-default {
+    img,
+    svg,
+    video {
+        max-inline-size: 100%;
+        display: block;
+    }
+}

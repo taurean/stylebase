@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Migration table
+
+| Before | After |
+|---|---|
+| `--layer-base/raised/sticky/overlay/modal/popover/toast` | `--z-base/raised/sticky/overlay/modal/popover/toast` (same values) |
+
+The layer order is unchanged, so overrides in the bare `token` / `default` / `utility` / `layout` layers keep working. Act only if you reference a `--layer-*` token.
+
+### Fixed
+
+- Semantic color tokens (`--hue-z0/z1/z2-*`, `--hue-link`, `--hue-focus-ring`, `--hue-backdrop`) moved from `suede-default` to `suede-token`, so overriding them from `@layer token` now works as documented (#4)
+- `data-theme="light|dark"` on `<html>` now overrides the OS preference; the `[data-theme]` rules previously lost to `:root { color-scheme: light dark }` on source order (#4)
+- Docs: subtree `data-theme` was described as rendering its contents dark. It switches the tokens inside the subtree; the themed element paints its own background and text color with a surface token. suede-css deliberately doesn't, since it can't know which surface the element is (#4)
+- Dark `--hue-z2-bg` now steps up to `neutral-800`; it matched z1 (`neutral-900`), contradicting the lighter-as-elevation-rises ramp (#4)
+
+### Changed
+
+- `--layer-*` z-index tokens renamed to `--z-*`, avoiding confusion with `@layer` (see migration table)
+- Source reorganized into concern files (`color`, `text`, `space`, `border`, `elevation`, `motion`, `layout`, `document`, `media`, `form`, `article`, `accessibility`) that each declare their own `@layer` blocks; `imports.css` is now the layer order plus plain imports. No change to the built CSS beyond the entries above.
+- Tooling: stylelint config moved to `stylelint.config.mjs` and reads every module as a token source; added `.editorconfig` (4-space indentation)
+- Contributor tooling moved from npm to pnpm (`pnpm-lock.yaml` replaces `package-lock.json`). Consumers can still install with any package manager
+
 ## [0.12.1] — 2026-10-21
 
 Renamed from stylebase to suede-css. Version numbering continues from 0.12.0. `@taurean/stylebase` will be deprecated on npm with a pointer to the new package.

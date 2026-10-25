@@ -1,0 +1,253 @@
+@layer suede-token {
+    /* @link https://utopia.fyi/type/calculator?c=314,10,1.2,1764,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,xl,3xl,16 */
+    :root {
+        /* Step 0: 10px → 12px */
+        --fs-0: clamp(0.625rem, 0.5979rem + 0.1379vw, 0.75rem);
+        /* Step 1: 12px → 15px */
+        --fs-1: clamp(0.75rem, 0.7094rem + 0.2069vw, 0.9375rem);
+        /* Step 2: 14.4px → 18.75px */
+        --fs-2: clamp(0.9rem, 0.8411rem + 0.3vw, 1.1719rem);
+        /* Step 3: 17.28px → 23.4375px */
+        --fs-3: clamp(1.08rem, 0.9967rem + 0.4247vw, 1.4648rem);
+        /* Step 4: 20.736px → 29.2969px */
+        --fs-4: clamp(1.296rem, 1.1801rem + 0.5904vw, 1.8311rem);
+        /* Step 5: 24.8832px → 36.6211px */
+        --fs-5: clamp(1.5552rem, 1.3963rem + 0.8095vw, 2.2888rem);
+        /* Step 6: 29.8598px → 45.7764px */
+        --fs-6: clamp(1.8662rem, 1.6508rem + 1.0977vw, 2.861rem);
+        /* Step 7: 35.8318px → 57.2205px */
+        --fs-7: clamp(2.2395rem, 1.95rem + 1.4751vw, 3.5763rem);
+        /* Step 8: 42.9982px → 71.5256px */
+        --fs-8: clamp(2.6874rem, 2.3013rem + 1.9674vw, 4.4703rem);
+        /* Step 9: 51.5978px → 89.407px */
+        --fs-9: clamp(3.2249rem, 2.7131rem + 2.6075vw, 5.5879rem);
+        /* Step 10: 61.9174px → 111.7587px */
+        --fs-10: clamp(3.8698rem, 3.1953rem + 3.4373vw, 6.9849rem);
+
+        /* line heights */
+        --lh-ui: 1;
+        --lh-snug: 1.15;
+        --lh-condensed: 1.35;
+        --lh-standard: 1.5;
+        --lh-expanded: 1.62;
+        --lh-loose: 1.75;
+
+        /* font stacks via https://github.com/system-fonts/modern-font-stacks */
+        --ff-antique-display:
+            Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
+            "Georgia Pro", Georgia, serif;
+        --ff-didone-display:
+            Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052,
+            Sylfaen, serif;
+        --ff-handwritten-display:
+            "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
+        --ff-humanist-classical:
+            Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+        --ff-humanist-geometric:
+            Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+            sans-serif;
+        --ff-humanist:
+            Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+            source-sans-pro, sans-serif;
+        --ff-industrial-display:
+            Bahnschrift, "DIN Alternate", "Franklin Gothic Medium",
+            "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+        --ff-mono-slab-serif: "Nimbus Mono PS", "Courier New", monospace;
+        --ff-mono:
+            ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+            "DejaVu Sans Mono", monospace;
+        --ff-neo-grotesque:
+            Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+            sans-serif;
+        --ff-old-style:
+            "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052,
+            serif;
+        --ff-rounded-sans-display:
+            ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa,
+            Manjari, "Arial Rounded MT", "Arial Rounded MT Bold", Calibri,
+            source-sans-pro, sans-serif;
+        --ff-slab-serif-display:
+            Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif",
+            "Sitka Small", serif;
+        --ff-system: system-ui, sans-serif;
+        --ff-transitional:
+            Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+
+        /* weights */
+        --fw-regular: 400;
+        --fw-medium: 500;
+        --fw-semibold: 600;
+        --fw-bold: 700;
+
+        /* aliases */
+        --ff-content: var(--ff-old-style);
+        --ff-heading: var(--ff-rounded-sans-display);
+        --ff-sans: var(--ff-neo-grotesque);
+        --ff-serif: var(--ff-transitional);
+        --ff-ui: var(--ff-system);
+    }
+}
+
+@layer suede-default {
+    /*
+     * Deliberate: headings are normal-weight; hierarchy comes from size
+     * alone. Opt into weight by setting --fw-heading (e.g. var(--fw-bold)).
+     */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: var(--fw-heading, var(--fw-regular));
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: var(--lh-snug);
+    }
+
+    h4,
+    h5,
+    h6 {
+        line-height: var(--lh-condensed);
+    }
+
+    h1 {
+        font-size: var(--fs-5);
+    }
+
+    h2 {
+        font-size: var(--fs-4);
+    }
+
+    h3 {
+        font-size: var(--fs-3);
+    }
+
+    h4 {
+        font-size: var(--fs-2);
+    }
+
+    h5 {
+        font-size: var(--fs-1);
+    }
+
+    h6 {
+        font-size: var(--fs-0);
+    }
+
+    :is(h5, h6):not([class]) {
+        text-transform: uppercase;
+    }
+
+    p {
+        line-height: var(--lh-standard);
+        font-size: var(--fs-1);
+    }
+
+    p code {
+        font-family: var(--ff-mono);
+        font-size: 0.9em;
+    }
+
+    a:not([class]) {
+        color: var(--hue-link);
+        text-underline-offset: 0.15em;
+    }
+}
+
+@layer suede-utility {
+    .u\:fs-0 {
+        font-size: var(--fs-0);
+    }
+
+    .u\:fs-1 {
+        font-size: var(--fs-1);
+    }
+
+    .u\:fs-2 {
+        font-size: var(--fs-2);
+    }
+
+    .u\:fs-3 {
+        font-size: var(--fs-3);
+    }
+
+    .u\:fs-4 {
+        font-size: var(--fs-4);
+    }
+
+    .u\:fs-5 {
+        font-size: var(--fs-5);
+    }
+
+    .u\:fs-6 {
+        font-size: var(--fs-6);
+    }
+
+    .u\:fs-7 {
+        font-size: var(--fs-7);
+    }
+
+    .u\:fs-8 {
+        font-size: var(--fs-8);
+    }
+
+    .u\:fs-9 {
+        font-size: var(--fs-9);
+    }
+
+    .u\:fs-10 {
+        font-size: var(--fs-10);
+    }
+
+    .u\:lh-ui {
+        line-height: var(--lh-ui);
+    }
+
+    .u\:lh-snug {
+        line-height: var(--lh-snug);
+    }
+
+    .u\:lh-condensed {
+        line-height: var(--lh-condensed);
+    }
+
+    .u\:lh-standard {
+        line-height: var(--lh-standard);
+    }
+
+    .u\:lh-expanded {
+        line-height: var(--lh-expanded);
+    }
+
+    .u\:lh-loose {
+        line-height: var(--lh-loose);
+    }
+
+    .u\:ff-content {
+        font-family: var(--ff-content);
+    }
+
+    .u\:ff-heading {
+        font-family: var(--ff-heading);
+    }
+
+    .u\:ff-sans {
+        font-family: var(--ff-sans);
+    }
+
+    .u\:ff-serif {
+        font-family: var(--ff-serif);
+    }
+
+    .u\:ff-ui {
+        font-family: var(--ff-ui);
+    }
+
+    .u\:ff-mono {
+        font-family: var(--ff-mono);
+    }
+}

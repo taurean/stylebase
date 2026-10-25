@@ -1,0 +1,14 @@
+@layer suede-default {
+    /*
+     * Normalize inheritance only — visual control styling is the
+     * consumer's job (e.g. on headless primitives).
+     */
+    button,
+    input,
+    select,
+    textarea {
+        font: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+    }
+}
