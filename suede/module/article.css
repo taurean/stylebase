@@ -27,7 +27,7 @@
 
     article hr {
         max-inline-size: var(--hr-width, 40ch);
-        margin: 0 10ch;
+        margin: 1em 10ch;
     }
 
     article p {
@@ -35,5 +35,11 @@
         font-size: inherit;
         text-wrap: pretty;
         font-family: var(--ff-content);
+    }
+
+    article pre:has(code) {
+        background-color: var(--hue-neutral-100);
+        padding: 1em;
+        overflow-x: auto;
     }
 }
