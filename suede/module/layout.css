@@ -1,0 +1,107 @@
+@layer suede-token {
+    /* @link https://utopia.fyi/grid/calculator?c=310,10,1.2,1332,12,1.25,10,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,xl,3xl,12 */
+    :root {
+        /* 1332px: 12 × 96px columns + 11 × 36px gaps at the scale's max */
+        --grid-max-width: 83.25rem;
+        --grid-gutter: var(--space-s-xl);
+        --grid-columns: 12;
+    }
+}
+
+@layer suede-layout {
+    /*
+     * Page-level centered container: caps line length at the grid's max
+     * width and keeps fluid gutters at the viewport edges.
+     *
+     * Deliberately shares its frame (max width, centering, gutters) with
+     * .l:grid but has no columns, so plain sections like header, main,
+     * and footer line up with the edges of any .l:grid on the same page.
+     * Change the frame in one and you must change it in the other.
+     */
+    .l\:root {
+        display: block;
+        margin-inline: auto;
+        max-inline-size: var(--grid-max-width);
+        padding-inline: var(--grid-gutter);
+    }
+
+    /*
+     * 12-column page grid. Children opt into spans with
+     * data-grid-columns="quarter|third|half|full" (scoped to direct
+     * children so unrelated data-attributes elsewhere can never collide).
+     */
+    .l\:grid {
+        display: grid;
+        gap: 0 var(--grid-gutter);
+        grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+        margin-inline: auto;
+        max-inline-size: var(--grid-max-width);
+        padding-inline: var(--grid-gutter);
+    }
+
+    .l\:grid > [data-grid-columns="quarter"] {
+        grid-column: span calc(var(--grid-columns) / 4);
+    }
+
+    .l\:grid > [data-grid-columns="third"] {
+        grid-column: span calc(var(--grid-columns) / 3);
+    }
+
+    .l\:grid > [data-grid-columns="half"] {
+        grid-column: span calc(var(--grid-columns) / 2);
+    }
+
+    .l\:grid > [data-grid-columns="full"] {
+        grid-column: span var(--grid-columns);
+    }
+
+    /*
+     * Push children to opposite ends of the row, wrapping when they no
+     * longer fit. API: --repel-gap (min space between children).
+     */
+    .l\:repel {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--repel-gap, var(--space-medium));
+    }
+
+    /*
+     * Horizontal flow: space between siblings, none at the edges.
+     * Margin-based (not flex gap) so it works with any child display and
+     * composes with other layouts. API: --river-gap (default 1em).
+     */
+    .l\:river > * {
+        margin-inline: 0;
+    }
+
+    .l\:river > * + * {
+        margin-inline-start: var(--river-gap, 1em);
+    }
+
+    /*
+     * Vertical stack: space between siblings, none at the edges (the
+     * "owl" pattern). API: --waterfall-gap (default 2em).
+     */
+    .l\:waterfall > * {
+        margin-block: 0;
+    }
+
+    .l\:waterfall > * + * {
+        margin-block-start: var(--waterfall-gap, 2em);
+    }
+
+    /*
+     * A list without list styling, items laid inline — for navs, tag rows,
+     * toolbars — while keeping list semantics in the markup.
+     */
+    .l\:ui-list {
+        list-style-type: none;
+        padding-inline: unset;
+
+        li {
+            display: inline-block;
+        }
+    }
+}

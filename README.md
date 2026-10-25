@@ -61,9 +61,9 @@ Library styles live only in the `suede-*` layers. The bare layers (`token`, `def
 }
 ```
 
-Dark mode follows the OS by default; force it with `data-theme="dark"` (or `"light"`) on `<html>` or any subtree.
+Dark mode follows the OS by default; force it with `data-theme="dark"` (or `"light"`) on `<html>`. On a subtree, `data-theme` switches the tokens inside it; the themed element paints its own background and text color with the surface tokens (e.g. `--hue-z1-bg` / `--hue-z1-fg`).
 
-**Claude Code users:** this repo ships a skill at `.claude/skills/suede/` for writing styles with suede-css — token catalog, override recipes, and headless-primitive (bits-ui) patterns. Copy it into a consuming project's `.claude/skills/`.
+**Claude Code users:** this repo ships a skill at `.claude/skills/suede/` for writing styles with suede-css — token catalog, override recipes, and conventions. Copy it into a consuming project's `.claude/skills/`.
 
 ## Contributing to suede-css + publishing changes
 

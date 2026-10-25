@@ -1,29 +1,14 @@
 @layer webfont, suede-token, token, suede-default, default, suede-utility, utility, suede-layout, layout;
 
-/* tokens */
-@import "module/color.css" layer(suede-token);
-@import "module/font-family.css" layer(suede-token);
-@import "module/font-size.css" layer(suede-token);
-@import "module/space.css" layer(suede-token);
-@import "module/radius.css" layer(suede-token);
-@import "module/border.css" layer(suede-token);
-@import "module/elevation.css" layer(suede-token);
-@import "module/motion.css" layer(suede-token);
-@import "module/grid.css" layer(suede-token);
-
-/* defaults */
-@import "module/generics.css" layer(suede-default);
-@import "module/color-defaults.css" layer(suede-default);
-@import "module/text-defaults.css" layer(suede-default);
-@import "module/article.css" layer(suede-default);
-
-/* utilities */
-@import "module/text-util.css" layer(suede-utility);
-
-/* layouts */
-@import "module/grid-layout.css" layer(suede-layout);
-@import "module/repel.css" layer(suede-layout);
-@import "module/river.css" layer(suede-layout);
-@import "module/root-container.css" layer(suede-layout);
-@import "module/ui-list.css" layer(suede-layout);
-@import "module/waterfall.css" layer(suede-layout);
+@import "module/accessibility.css";
+@import "module/article.css";
+@import "module/border.css";
+@import "module/color.css";
+@import "module/document.css";
+@import "module/elevation.css";
+@import "module/form.css";
+@import "module/layout.css";
+@import "module/media.css";
+@import "module/motion.css";
+@import "module/space.css";
+@import "module/text.css";

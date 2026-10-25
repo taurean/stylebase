@@ -1,0 +1,53 @@
+@layer suede-default {
+    :root {
+        color-scheme: light dark;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        background-color: var(--hue-z0-bg);
+        color: var(--hue-z0-fg);
+    }
+
+    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ via Andy Bell's post on his updated reset */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    body {
+        font-family: var(--ff-sans);
+        font-size: var(--fs-1);
+        line-height: var(--lh-standard);
+        margin: 0;
+    }
+
+    hr {
+        border: unset;
+        background-color: var(--hue-z0-divider);
+        height: 1px;
+    }
+
+    /*
+     * Must stay after :root above: same specificity, so source order is
+     * what lets <html data-theme> beat the OS-following default.
+     *
+     * Deliberately sets only color-scheme. A themed subtree could be a
+     * page section, a card, or a dialog, and only the component knows
+     * which surface token to paint with, so suede doesn't guess.
+     */
+    [data-theme="light"] {
+        color-scheme: light;
+    }
+
+    [data-theme="dark"] {
+        color-scheme: dark;
+    }
+}

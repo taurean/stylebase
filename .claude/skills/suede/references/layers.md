@@ -1,12 +1,6 @@
 # Layer recipes — overriding and theming suede-css
 
-suede-css declares this layer order (first line of its CSS):
-
-```css
-@layer webfont, suede-token, token, suede-default, default, suede-utility, utility, suede-layout, layout;
-```
-
-The library only writes into `suede-*` layers. Each bare name after it (`token`, `default`, `utility`, `layout`) is reserved for **you** and always wins against the library, regardless of selector specificity. Unlayered CSS beats every layer, so ordinary component styles (Svelte `<style>`, CSS modules) also always win. Consequence: **you never need `!important` against suede-css.** If an override isn't taking effect, the selector isn't matching — it's not a cascade problem.
+The bare layers (`token`, `default`, `utility`, `layout`) and unlayered CSS always beat the library, regardless of specificity. If an override isn't taking effect, the selector isn't matching; it's not a cascade problem.
 
 ## Override a default (element styling)
 
@@ -47,7 +41,7 @@ Keep the `light-dark(light, dark)` shape when overriding semantic color tokens, 
 
 ## Manual theme toggle
 
-`data-theme` on `<html>` — or **any subtree** — forces a mode; without it the OS preference applies:
+`data-theme` on `<html>` forces a mode for the page; without it the OS preference applies. It also works on a subtree (see below).
 
 ```html
 <html data-theme="dark">
@@ -60,7 +54,20 @@ const next = html.dataset.theme === "dark" ? "light" : "dark";
 html.dataset.theme = next; // remove the attribute to return to auto
 ```
 
-Subtree theming works because the mechanism is the inherited `color-scheme` property: a `<div data-theme="dark">` renders its contents dark inside a light page.
+On a subtree, `data-theme` switches what the tokens resolve to inside it, and nothing more. The mechanism is the inherited `color-scheme` property, which every `light-dark()` token follows. suede-css doesn't paint the themed element, because it can't know which surface it is (a page section, a card, a dialog). The element paints itself with the surface tokens it represents:
+
+```css
+.promo {
+    background-color: var(--hue-z1-bg);
+    color: var(--hue-z1-fg);
+}
+```
+
+```html
+<section class="promo" data-theme="dark">…</section>
+```
+
+Without those two declarations the section stays transparent over the light page, and its text keeps the color it inherited from `body`. Descendants that use tokens directly still switch. On `<html>` none of this is needed: `html` and `body` are already painted with the z0 surface.
 
 ## Scoped token overrides
 

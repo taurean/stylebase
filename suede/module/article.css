@@ -1,37 +1,39 @@
-article {
-    font-size: var(--fs-2);
-}
+@layer suede-default {
+    article {
+        font-size: var(--fs-2);
+    }
 
-article :where(h1, h2, h3) {
-    font-family: var(--ff-heading);
-}
+    article :is(h1, h2, h3) {
+        font-family: var(--ff-heading);
+    }
 
-article :where(h4, h5, h6) {
-    font-family: var(--ff-sans);
-}
+    article :is(h4, h5, h6) {
+        font-family: var(--ff-sans);
+    }
 
-article :where(h1, h2, h3, h4, h5, h6) {
-    max-inline-size: 40ch;
-    text-wrap: balance;
-}
+    article :is(h1, h2, h3, h4, h5, h6) {
+        max-inline-size: 40ch;
+        text-wrap: balance;
+    }
 
-article hgroup p {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-2);
-}
+    article hgroup p {
+        font-family: var(--ff-heading);
+        font-size: var(--fs-2);
+    }
 
-article h1 {
-    font-size: var(--fs-7);
-}
+    article h1 {
+        font-size: var(--fs-7);
+    }
 
-article hr {
-    max-inline-size: var(--hr-width, 40ch);
-    margin: 0 10ch;
-}
+    article hr {
+        max-inline-size: var(--hr-width, 40ch);
+        margin: 0 10ch;
+    }
 
-article p {
-    max-inline-size: 68ch;
-    font-size: inherit;
-    text-wrap: pretty;
-    font-family: var(--ff-content);
+    article p {
+        max-inline-size: 68ch;
+        font-size: inherit;
+        text-wrap: pretty;
+        font-family: var(--ff-content);
+    }
 }
