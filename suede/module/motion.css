@@ -22,6 +22,7 @@
      */
     @media (prefers-reduced-motion: reduce) {
         :root {
+            --duration-instant: 1ms;
             --duration-fast: 1ms;
             --duration-base: 1ms;
             --duration-slow: 1ms;
