@@ -32,7 +32,7 @@
     hr {
         border: unset;
         background-color: var(--hue-z0-divider);
-        height: 1px;
+        block-size: 1px;
     }
 
     /*
