@@ -2,7 +2,7 @@
 /*
  * Verifies .claude/skills/suede/references/tokens.md stays in sync
  * with the tokens actually declared in suede/module/*.css.
- * Presence is machine-checked; prose stays human. Run: npm run check:skill
+ * Presence is machine-checked; prose stays human. Run: pnpm check:skill
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";

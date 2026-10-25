@@ -32,10 +32,10 @@ Guidance for working **on** suede-css. For writing CSS **with** suede-css in a c
 
 ## Checks and release
 
-- `npm run lint` after every CSS change. It also catches undefined `var()` references.
-- `npm run build:preview` writes readable CSS to `dist-preview/` for diffing. `dist/` is committed and only rebuilt on release.
+- `pnpm lint` after every CSS change. It also catches undefined `var()` references.
+- `pnpm build:preview` writes readable CSS to `dist-preview/` for diffing. `dist/` is committed and only rebuilt on release.
 - Run `release:*` only when the user says to. It publishes to npm.
 
 ## When a token or class changes
 
-Update `.claude/skills/suede/references/tokens.md` (`npm run check:skill` enforces it; new hooks also go in `consumerHooks` in `scripts/check-skill-tokens.mjs`), add a `CHANGELOG.md` entry with a migration line for renames and removals, and update `examples/` if the change is visible.
+Update `.claude/skills/suede/references/tokens.md` (`pnpm check:skill` enforces it; new hooks also go in `consumerHooks` in `scripts/check-skill-tokens.mjs`), add a `CHANGELOG.md` entry with a migration line for renames and removals, and update `examples/` if the change is visible.

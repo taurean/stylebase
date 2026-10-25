@@ -24,6 +24,7 @@ The layer order is unchanged, so overrides in the bare `token` / `default` / `ut
 - `--layer-*` z-index tokens renamed to `--z-*`, avoiding confusion with `@layer` (see migration table)
 - Source reorganized into concern files (`color`, `text`, `space`, `border`, `elevation`, `motion`, `layout`, `document`, `media`, `form`, `article`, `accessibility`) that each declare their own `@layer` blocks; `imports.css` is now the layer order plus plain imports. No change to the built CSS beyond the entries above.
 - Tooling: stylelint config moved to `stylelint.config.mjs` and reads every module as a token source; added `.editorconfig` (4-space indentation)
+- Contributor tooling moved from npm to pnpm (`pnpm-lock.yaml` replaces `package-lock.json`). Consumers can still install with any package manager
 
 ## [0.12.1] — 2026-10-21
 

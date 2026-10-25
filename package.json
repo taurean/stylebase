@@ -27,6 +27,7 @@
     ],
     "author": "Taurean Bryant <cya@L8R.email>",
     "license": "SEE LICENSE IN LICENSE",
+    "packageManager": "pnpm@11.13.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/taurean/suede-css.git"
