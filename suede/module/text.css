@@ -144,7 +144,6 @@
 
     p {
         line-height: var(--lh-standard);
-        font-size: var(--fs-1);
     }
 
     p code {
