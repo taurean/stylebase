@@ -1,6 +1,6 @@
 {
     "name": "@taurean/suede-css",
-    "version": "0.12.1",
+    "version": "0.13.0",
     "description": "a starter set of CSS files",
     "main": "dist/suede.min.css",
     "style": "dist/suede.min.css",
