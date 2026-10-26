@@ -296,6 +296,12 @@
 
         /* interaction hooks */
         --hue-link: light-dark(var(--hue-blue-700), var(--hue-blue-300));
+        --hue-link-visited: light-dark(
+            var(--hue-purple-700),
+            var(--hue-purple-300)
+        );
+        /* one step further from the surface than --hue-link */
+        --hue-link-active: light-dark(var(--hue-blue-900), var(--hue-blue-200));
         /* for dialog overlays / ::backdrop */
         --hue-backdrop: color-mix(
             in oklch,

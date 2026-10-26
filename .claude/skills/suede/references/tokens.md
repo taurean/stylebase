@@ -20,6 +20,8 @@ Hues: `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `c
 | `--hue-z2-bg` / `--hue-z2-fg` / `--hue-z2-border` | Overlay surfaces: dialogs, popovers, menus, toasts |
 | `--hue-focus-ring` | Focus ring color (consumed by the global `:focus-visible` rule) |
 | `--hue-link` | Default link color |
+| `--hue-link-visited` | Visited link color |
+| `--hue-link-active` | Link color while pressed |
 | `--hue-backdrop` | Dialog/drawer backdrop (`::backdrop`, overlay divs) |
 | `--shadow-color` | Base color the `--shadow-z*` tokens mix from |
 

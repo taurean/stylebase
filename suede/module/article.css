@@ -25,15 +25,23 @@
         font-size: var(--fs-7);
     }
 
+    /* Start offset tuned by eye to center under the ragged paragraph text */
     article hr {
         max-inline-size: var(--hr-width, 40ch);
-        margin: 0 10ch;
+        margin-block: 1em;
+        margin-inline: 10ch 0;
     }
 
     article p {
         max-inline-size: 68ch;
-        font-size: inherit;
         text-wrap: pretty;
         font-family: var(--ff-content);
+    }
+
+    article pre:has(code) {
+        background-color: var(--hue-z1-bg);
+        padding: 1em;
+        /* physical: overflow-inline isn't supported in every browser yet */
+        overflow-x: auto;
     }
 }

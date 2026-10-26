@@ -100,7 +100,7 @@
         list-style-type: none;
         padding-inline: unset;
 
-        li {
+        & > li {
             display: inline-block;
         }
     }
