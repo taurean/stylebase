@@ -4,6 +4,8 @@ All notable changes to this project are documented here. The format is based on 
 
 ## [Unreleased]
 
+## [0.13.0] — 2026-10-26
+
 ### Migration table
 
 | Before | After |
@@ -28,6 +30,7 @@ The layer order is unchanged, so overrides in the bare `token` / `default` / `ut
 - `data-theme="light|dark"` on `<html>` now overrides the OS preference; the `[data-theme]` rules previously lost to `:root { color-scheme: light dark }` on source order (#4)
 - Docs: subtree `data-theme` was described as rendering its contents dark. It switches the tokens inside the subtree; the themed element paints its own background and text color with a surface token. suede-css deliberately doesn't, since it can't know which surface the element is (#4)
 - Dark `--hue-z2-bg` now steps up to `neutral-800`; it matched z1 (`neutral-900`), contradicting the lighter-as-elevation-rises ramp (#4)
+- Each git tag now holds a `dist/` built for its own version; previously a tag carried the previous release's build. The npm package was always correct (#6)
 
 ### Changed
 
