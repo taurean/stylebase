@@ -38,8 +38,27 @@ for (const file of readdirSync(moduleDir).filter((f) => f.endsWith(".css"))) {
 }
 
 const doc = readFileSync(docPath, "utf8");
+
+// Wildcards name a family instead of one token: --radius-* and
+// --hue-<name>-<step> need at least one declared token with that prefix,
+// --shadow-z1..z3 needs both ends declared. They're cut from the doc so
+// the rest is exact names.
+const familyPrefixes = [];
+const rangeEnds = [];
+const exactDoc = doc
+    .replace(/(--[a-z0-9-]+)[*<]/g, (_, prefix) => {
+        familyPrefixes.push(prefix);
+        return "";
+    })
+    .replace(
+        /(--[a-z0-9-]*?)([a-z0-9]+)\.\.([a-z0-9]+)/g,
+        (_, prefix, from, to) => {
+            rangeEnds.push(prefix + from, prefix + to);
+            return "";
+        },
+    );
 const documented = new Set(
-    [...doc.matchAll(/--[a-z0-9-]+[a-z0-9]/g)].map((m) => m[0]),
+    [...exactDoc.matchAll(/--[a-z0-9-]+[a-z0-9]/g)].map((m) => m[0]),
 );
 
 const problems = [];
@@ -52,18 +71,22 @@ for (const token of declared) {
         if (!doc.includes(`\`${hue[1]}\``)) {
             problems.push(`undocumented hue family: ${hue[1]} (${token})`);
         }
-    } else if (!documented.has(token) && !doc.includes(`${token}`)) {
+    } else if (!documented.has(token)) {
         problems.push(`undocumented token: ${token}`);
     }
 }
 
 for (const token of documented) {
     if (declared.has(token) || consumerHooks.has(token)) continue;
-    // Family wildcards written like --fs-0..10 / --radius-* resolve
-    // if any declared token starts with the mentioned prefix.
-    const prefix = token.replace(/-(\d+|z\d|xs|sm|md|lg|xl)$/, "-");
-    const matchesFamily = [...declared].some((d) => d.startsWith(prefix));
-    if (!matchesFamily) problems.push(`documented but not declared: ${token}`);
+    problems.push(`documented but not declared: ${token}`);
+}
+for (const prefix of familyPrefixes) {
+    if (![...declared].some((d) => d.startsWith(prefix))) {
+        problems.push(`wildcard matches no declared token: ${prefix}…`);
+    }
+}
+for (const token of rangeEnds) {
+    if (!declared.has(token)) problems.push(`range end not declared: ${token}`);
 }
 
 // Hooks: every fallback read is a listed hook, read in exactly one

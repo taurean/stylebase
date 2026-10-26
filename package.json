@@ -42,9 +42,10 @@
         "dev": "browser-sync start --server --files 'suede/**/*.css,examples/*.html,index.html' --startPath '/'",
         "lint": "stylelint \"suede/**/*.css\"",
         "check:skill": "node scripts/check-skill-tokens.mjs",
-        "release:patch": "npm run lint && npm run check:skill && git fetch origin && git pull origin main && npm version patch && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public",
-        "release:minor": "npm run lint && npm run check:skill && git fetch origin && git pull origin main && npm version minor && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public",
-        "release:major": "npm run lint && npm run check:skill && git fetch origin && git pull origin main && npm version major && npm run build && git add dist/ && git commit -m 'Build files' && git push origin main --tags && npm publish --access=public"
+        "version": "pnpm build && git add dist/",
+        "release:patch": "pnpm lint && pnpm check:skill && git fetch origin && git pull origin main && pnpm version patch && git push origin main --follow-tags && pnpm publish --access=public --publish-branch main",
+        "release:minor": "pnpm lint && pnpm check:skill && git fetch origin && git pull origin main && pnpm version minor && git push origin main --follow-tags && pnpm publish --access=public --publish-branch main",
+        "release:major": "pnpm lint && pnpm check:skill && git fetch origin && git pull origin main && pnpm version major && git push origin main --follow-tags && pnpm publish --access=public --publish-branch main"
     },
     "devDependencies": {
         "browser-sync": "^3.0.4",
