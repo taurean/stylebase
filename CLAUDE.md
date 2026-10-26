@@ -27,6 +27,7 @@ Guidance for working **on** suede-css. For writing CSS **with** suede-css in a c
 ## Conventions
 
 - Logical properties. A physical one needs a comment saying why.
+- Nesting one level deep at most, always with an explicit `&`. Nesting under a selector list raises every child to the list's highest specificity, so flatten those instead. The build doesn't compile nesting, so it ships as written.
 - Generated scales keep their generator URL (Utopia, Harmony) in a comment above the block, and each fluid token gets a range comment (`/* Step 0: 10px → 12px */`).
 - Deliberate opinions, don't "fix" them: headings are normal weight because hierarchy comes from size, and utilities are typography and accessibility only, with no spacing, color, or display utilities.
 
