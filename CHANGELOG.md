@@ -12,8 +12,18 @@ All notable changes to this project are documented here. The format is based on 
 
 The layer order is unchanged, so overrides in the bare `token` / `default` / `utility` / `layout` layers keep working. Act only if you reference a `--layer-*` token.
 
+### Added
+
+- Default links (`a:not([class])`) get visited, hover, and active states: visited uses `--hue-link-visited`, pressed uses `--hue-link-active`, and hover fades the underline out over `--duration-fast`
+- `<pre>` blocks containing `<code>` inside `<article>` get a `--hue-z1-bg` background, padding, and horizontal scroll
+
 ### Fixed
 
+- `--duration-instant` now collapses to 1ms under `prefers-reduced-motion` like the other durations, so `transitionend` fires for exits timed with it (#5)
+- `hr` uses `block-size` instead of `height` (#5)
+- `article hr` margins use logical properties and gain block spacing (#5)
+- `img`, `svg`, and `video` with `width`/`height` attributes keep their aspect ratio when `max-inline-size` shrinks them (#5)
+- `l:ui-list` lays out only its own items inline; nested lists inside it keep normal block items (#5)
 - Semantic color tokens (`--hue-z0/z1/z2-*`, `--hue-link`, `--hue-focus-ring`, `--hue-backdrop`) moved from `suede-default` to `suede-token`, so overriding them from `@layer token` now works as documented (#4)
 - `data-theme="light|dark"` on `<html>` now overrides the OS preference; the `[data-theme]` rules previously lost to `:root { color-scheme: light dark }` on source order (#4)
 - Docs: subtree `data-theme` was described as rendering its contents dark. It switches the tokens inside the subtree; the themed element paints its own background and text color with a surface token. suede-css deliberately doesn't, since it can't know which surface the element is (#4)
@@ -21,6 +31,7 @@ The layer order is unchanged, so overrides in the bare `token` / `default` / `ut
 
 ### Changed
 
+- `p` no longer sets its own `font-size`, so it inherits from its container and `u:fs-*` on a parent now reaches paragraphs. Paragraphs inside an element with its own font size render at that size instead of `--fs-1` (#5)
 - `--layer-*` z-index tokens renamed to `--z-*`, avoiding confusion with `@layer` (see migration table)
 - Source reorganized into concern files (`color`, `text`, `space`, `border`, `elevation`, `motion`, `layout`, `document`, `media`, `form`, `article`, `accessibility`) that each declare their own `@layer` blocks; `imports.css` is now the layer order plus plain imports. No change to the built CSS beyond the entries above.
 - Tooling: stylelint config moved to `stylelint.config.mjs` and reads every module as a token source; added `.editorconfig` (4-space indentation)

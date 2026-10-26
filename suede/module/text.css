@@ -151,9 +151,24 @@
         font-size: 0.9em;
     }
 
+    /* transition lives here, not on :hover, so the underline fades both ways */
     a:not([class]) {
         color: var(--hue-link);
         text-underline-offset: 0.15em;
+        transition: text-decoration-color var(--duration-fast) var(--ease-out);
+    }
+
+    /* :visited and :active tie on specificity: keep :active after :visited */
+    a:not([class]):visited {
+        color: var(--hue-link-visited);
+    }
+
+    a:not([class]):hover {
+        text-decoration-color: transparent;
+    }
+
+    a:not([class]):active {
+        color: var(--hue-link-active);
     }
 }
 
