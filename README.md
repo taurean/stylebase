@@ -6,9 +6,9 @@ A framework-agnostic CSS foundation: design tokens, sensible HTML defaults, layo
 
 ## Installation
 
-**NPM (recommended):**
+**pnpm (recommended):**
 ```bash
-npm i @taurean/suede-css
+pnpm add @taurean/suede-css
 ```
 
 **Direct download:**
@@ -73,5 +73,5 @@ Once changes are merged into `main`, run one of the release scripts (`pnpm relea
 - `pnpm build:preview` — write a non-minified CSS file to `dist-preview/` (gitignored) for human-readable diffs
 - `pnpm lint` — stylelint over the source (catches invalid values and undefined `var()` references)
 - `pnpm check:skill` — verify the skill's token catalog matches the source
-- `pnpm dev` — live reload via browsersync to test the example HTML files while making style changes (files in `examples/` have no CSS of their own; they rely on suede-css's global styles and classes)
-- Release scripts assume the GitHub remote is named `gh`
+- `pnpm dev` — live reload via browsersync to test the example HTML files while making style changes (files in `examples/` rely on suede-css's global styles and classes; `primitives.html` adds a `<style>` block of component recipes built only from suede-css tokens)
+- Release scripts assume the GitHub remote is named `origin`

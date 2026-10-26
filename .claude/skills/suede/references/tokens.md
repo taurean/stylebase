@@ -6,7 +6,7 @@ All tokens are defined on `:root` in the `suede-token` layer. Override any of th
 
 23 hues × 11 steps (`50, 100, 200 … 900, 950`), all OKLCH, modeled on Evil Martians' Harmony. Lightness is ~constant per step across hues, so any two hues at the same step are interchangeable for contrast purposes. `500` is the "brand" stop; `50` near-white, `950` near-black.
 
-Hues: `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `light-blue`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose` (chromatic); `slate` (cool neutral), `zinc`, `neutral` (achromatic), `stone` (warm neutral), `olive`, `mauve` (tinted neutrals).
+Hues: `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `light-blue`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose` (chromatic); `slate` (cool neutral), `zinc` (faintly cool neutral), `neutral` (achromatic), `stone` (warm neutral), `olive`, `mauve` (tinted neutrals).
 
 **Use for:** accents, state colors (success/warning/danger), charts, brand moments. **Don't use for** surfaces and body text — use the semantic tokens below so dark mode keeps working.
 

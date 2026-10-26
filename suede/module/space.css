@@ -15,7 +15,9 @@
         --space-4xl: clamp(110.9px, 106.0969px + 1.5297vw, 133.08px);
         --space-5xl: clamp(179.44px, 171.668px + 2.4752vw, 215.33px);
 
-        /* One-up paired step, 10px → 36px. Referenced by --grid-gutter in grid.css. */
+        /* One-up paired step, 10px → 36px over a 310 → 1332px viewport (the grid
+         * calculator's range in layout.css, not the 314 → 1764px above), so the
+         * gutter tops out where --grid-max-width does. Read by --grid-gutter. */
         --space-s-xl: clamp(0.625rem, 0.1321rem + 2.544vw, 2.25rem);
     }
 }
